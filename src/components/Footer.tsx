@@ -1,6 +1,7 @@
 import { Facebook, Linkedin, Twitter, Instagram, Mail } from "lucide-react";
 
 export default function Footer() {
+  const copyrights=new Date().getFullYear()
   return (
     <footer className="bg-[#1A1A1A] text-gray-300 pt-16">
 
@@ -97,7 +98,8 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between text-sm text-gray-400">
 
           <p>
-            Copyright © 2025 Senlogic. all rights reserved.
+            Copyright © {copyrights
+            } Senlogic. all rights reserved.
           </p>
 
           <div className="flex gap-4 mt-3 md:mt-0">

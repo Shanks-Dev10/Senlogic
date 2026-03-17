@@ -41,7 +41,7 @@ export default function Blog() {
   ];
 
   return (
-    <section>
+    <section className="bg-[#F7F9FB]">
       <div className="max-w-7xl mx-auto py-24 px-4 md:px-10 lg:px-12">
         <div className="flex flex-col justify-center items-center mb-[50px]">
           <h2 className="mb-[5px] text-[35px] leading-[45px] font-semibold text-[#232323]">

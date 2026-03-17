@@ -1,67 +1,122 @@
-import Project1 from "@/assets/our-story.webp";
-import { Link } from "react-router-dom";
+import Team1 from "@/assets/team1.webp";
+import Team2 from "@/assets/team2.webp";
+import Team3 from "@/assets/team3.webp";
+import Team4 from "@/assets/team4.webp";
+
+
+import { Facebook, Twitter, Linkedin, } from "lucide-react";
 
 export default function OurTeam() {
-  const teams = [
-    {
-      title: "Manufacturing",
-      img: Project1,
-      link: "/",
-    },
-    {
-      title: "Manufacturing",
-      img: Project1,
-      link: "/",
-    },
-    {
-      title: "Manufacturing",
-      img: Project1,
-      link: "/",
-    },
-    {
-      title: "Manufacturing",
-      img: Project1,
-      link: "/",
-    },
-  ];
+    const team = [
+        {
+            img: Team1,
+            name: "Nashid Martines",
+            role: "DIRECTOR",
+        },
+        {
+            img: Team2,
+            name: "Konne Backfield",
+            role: "DESIGNER",
+        },
+        {
+            img: Team3,
+            name: "Hackson Willingham",
+            role: "DEVELOPER",
+        },
+        {
+            img: Team4,
+            name: "Konne Backfield",
+            role: "MANAGER",
+        },
+    ];
 
-  return (
-    <section className="bg-[#F7F9FB]">
-      <div className="max-w-7xl mx-auto py-24 px-4 md:px-10 lg:px-12">
-        <div className="flex flex-col justify-center items-center mb-[50px]">
-          <h2 className="mb-[5px] text-[35px] leading-[45px] font-semibold text-[#232323]">
-            Our team
-          </h2>
-          <p className="max-w-[700px] text-center mx-auto pt-[10px] text-[15px] text-[#494949] leading-[28px] mb-[24px]">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry has been the industry's standard dummy text ever since the
-            been when an unknown printer.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-6">
-          {teams.map((team, index) => (
-            <Link
-              key={index}
-              to={team.link}
-              className="relative flex justify-center items-center group"
-            >
-              <img
-                src={team.img}
-                alt="project1 "
-                className="w-full h-full rounded-sm group-hover:-translate-y-4 transition-all ease-in-out duration-300"
-              />
-              <div className="p-[15px] opacity-0 bg-[#fff] group-hover:opacity-100 translate-y-4  group-hover:-translate-y-4 transition-all ease-in-out duration-300 rounded-sm absolute bottom-4 z-[1px] w-[242px]">
-                <h4 className="text-[16px] font-semibold leading-[24px] text-[#232323] ">
-                  {team.title}
-                </h4>
-                <span className="text-[13px] font-semibold mb-[10px] text-[#000] uppercase opacity-45">
-                  Manager
-                </span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+    return (
+        <section className="bg-[#F7F9FB] py-24">
+            <div className="max-w-7xl mx-auto px-6">
+
+                {/* Title */}
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl font-bold text-gray-800">
+                        Meet Our Team
+                    </h2>
+
+                    <p className="mt-4 text-gray-500 max-w-2xl mx-auto">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry has been the industry's standard dummy text ever since
+                        when an unknown printer.
+                    </p>
+                </div>
+
+                {/* Team Grid */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                    {team.map((member, index) => (
+                        <div
+                            key={index}
+                            className="group relative overflow-hidden rounded-lg shadow-sm bg-white text-center"
+                        >
+
+                            {/* Image */}
+                            <img
+                                src={member.img}
+                                alt={member.name}
+                                className="w-full h-64 object-cover"
+                            />
+
+                            {/* Default Card */}
+                            <div className="relative p-6 bg-white transition duration-300 group-hover:opacity-0">
+
+                                {/* Triangle */}
+                                <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[12px] border-r-[12px] border-b-[12px] border-l-transparent border-r-transparent border-b-white"></div>
+
+                                <h3 className="text-lg font-semibold text-gray-800">
+                                    {member.name}
+                                </h3>
+
+                                <p className="text-[#E7232D] text-sm tracking-widest mt-2">
+                                    {member.role}
+                                </p>
+                            </div>
+
+                            {/* Hover Card */}
+                            <div className="absolute bottom-0 left-0 w-full bg-[#E7232D] text-white p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
+
+                                {/* Triangle */}
+                                <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[12px] border-r-[12px] border-b-[12px] border-l-transparent border-r-transparent border-b-[#E7232D] opacity-0 group-hover:opacity-100 transition duration-300">
+                                </div>
+                                <h3 className="text-lg font-semibold">
+                                    {member.name}
+                                </h3>
+
+                                <p className="text-sm tracking-widest mt-2">
+                                    {member.role}
+                                </p>
+
+                                {/* Social Icons */}
+                                <div className="flex justify-center gap-3 mt-4">
+
+                                    <span className="border border-white p-2 rounded hover:bg-white hover:text-[#E7232D] cursor-pointer transition">
+                                        <Facebook size={14} />
+                                    </span>
+
+                                    <span className="border border-white p-2 rounded hover:bg-white hover:text-[#E7232D] cursor-pointer transition">
+                                        <Twitter size={14} />
+                                    </span>
+
+                                    <span className="border border-white p-2 rounded hover:bg-white hover:text-[#E7232D] cursor-pointer transition">
+                                        <Linkedin size={14} />
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    ))}
+
+                </div>
+
+            </div>
+        </section>
+    );
 }
