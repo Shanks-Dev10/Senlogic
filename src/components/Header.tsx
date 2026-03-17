@@ -22,7 +22,7 @@ export default function Header() {
     },
     {
       name: "About Us",
-      link: "/",
+      link: "/about",
     },
     {
       name: "Services",
