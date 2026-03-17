@@ -1,7 +1,7 @@
 import BannerImg from "@/assets/home-banner.webp";
+import Slider1 from '@/assets/slider1.webp'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -32,7 +32,7 @@ export default function HeroBanner() {
             {/* DARK OVERLAY */}
             <div className="absolute w-full h-full bg-black/60" />
             {/* CONTENT */}
-            <div className="relative z-10 flex items-center justify-center h-full text-white text-5xl">
+            <div className="relative z-10 flex items-center justify-center h-full text-white text-2xl md:text-5xl">
               Industrial Solutions
             </div>
           </SwiperSlide>
@@ -40,13 +40,13 @@ export default function HeroBanner() {
             {" "}
             {/* BACKGROUND IMAGE */}
             <img
-              src={BannerImg}
+              src={Slider1}
               className="absolute w-full h-full object-cover"
             />
             {/* DARK OVERLAY */}
             <div className="absolute w-full h-full bg-black/60" />
             {/* CONTENT */}
-            <div className="relative z-10 flex items-center justify-center h-full text-white text-5xl">
+            <div className="relative z-10 flex items-center justify-center h-full text-white text-2xl md:text-5xl">
               Industrial Solutions
             </div>
           </SwiperSlide>

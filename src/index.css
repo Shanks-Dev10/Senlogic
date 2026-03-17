@@ -144,3 +144,7 @@ html,body{
 .swiper-button-next::after, .swiper-button-next::prev{
   font-size: 16px !important;
 }
+
+.product-card{
+  box-shadow: 0 0 30px #0000000d;
+}
