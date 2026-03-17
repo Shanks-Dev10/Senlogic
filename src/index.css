@@ -130,3 +130,17 @@ html,body{
   background: #FBE87E;
 }
 
+.swiper-button-next, .swiper-button-prev{
+  width: 40px !important;
+  height: 40px !important;
+  background-color: #ffffff26;
+  color: white !important;
+}
+.swiper-button-next svg, .swiper-button-prev svg{
+  width: auto !important;
+  height: auto !important;
+}
+
+.swiper-button-next::after, .swiper-button-next::prev{
+  font-size: 16px !important;
+}

@@ -1,3 +1,12 @@
+import Header from "@/components/Header";
+import HeroBanner from "@/components/home/HeroBanner";
+
 export default function Home() {
-  return <h1 className="text-3xl text-red-600">Home Page</h1>;
+  return (
+    <div className="">
+      <Header />
+      <HeroBanner/>
+      <div className="h-[500px]"></div>
+    </div>
+  );
 }
