@@ -1,6 +1,16 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import {
+  ChevronRight,
+  Menu,
+  X,
+  Facebook,
+  Linkedin,
+  Twitter,
+  Instagram,
+  Mail,
+} from "lucide-react";
+import logo from "@/assets/logo.webp";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -47,18 +57,17 @@ export default function Header() {
       {/* NAVBAR */}
       <div className="flex items-center justify-between px-6 md:px-12 py-4 text-white max-w-7xl mx-auto">
         {/* LOGO */}
-        <Link to="/" className="flex items-center gap-2 text-2xl font-bold">
-          <span className="bg-orange-500 px-2 py-1">🏭</span>
-          Industry
+        <Link to="/" className="w-[150px]">
+          <img src={logo} alt="logo" className="w-full h-full" />
         </Link>
 
         {/* DESKTOP MENU */}
-        <nav className="hidden lg:flex gap-8  font-medium">
+        <nav className="hidden lg:flex font-medium">
           {menuLinks.map((menus, index) => (
             <Link
               key={index}
               to={menus.link}
-              className=" py-[23px] px-[15px] relative after:content-[''] after:absolute after:left-[-1px] after:bottom-0 after:h-full after:w-0 after:bg-orange-500 after:transition-all after:duration-700 after:-z-10 hover:after:w-full hover:after:text-white "
+              className=" py-[23px] px-[15px] border-l border-r border-l-[#ffffff1a] border-r-[#ffffff1a] relative after:content-[''] after:absolute after:left-[-1px] after:bottom-0 after:h-full after:w-0 after:bg-[#D2151E] after:transition-all after:duration-700 after:-z-10 hover:after:w-full hover:after:text-white "
             >
               {menus.name}
             </Link>
@@ -67,7 +76,7 @@ export default function Header() {
 
         {/* RIGHT ICON */}
         <div className="hidden lg:flex items-center gap-4">
-          <button className="border rounded-xl px-5 py-3">Contact Us</button>
+          <button className="border rounded-md px-4 py-2">Contact Us</button>
         </div>
 
         {/* MOBILE MENU BUTTON */}
@@ -79,42 +88,58 @@ export default function Header() {
       {/* MOBILE MENU */}
       {open && (
         <div
-          className={`bg-white w-[85%] min-h-screen fixed top-0 left-0 z-20 transform transition-transform duration-300 ease-in-out ${
+          className={`bg-white w-[85%] min-h-screen  pt-12 fixed top-0 left-0 z-20 transform transition-transform duration-300 ease-in-out ${
             open ? "translate-x-0" : "-translate-x-full"
           }`}
         >
-          <div className="lg:hidden text-black px-6 py-4 space-y-4 flex flex-col">
+          <div className="lg:hidden text-black px-6 py-4 gap-5 flex flex-col justify-between h-full">
             {/* LOGO */}
-            <div className="py-[30px] px-[15px]">
-              <Link
-                to="/"
-                className="flex items-center gap-2 text-2xl font-bold"
-              >
-                <span className="bg-orange-500 px-2 py-1">🏭</span>
-                Industry
-              </Link>
-            </div>
+
+            <Link to="/" className="w-[200px]">
+              <img src={logo} alt="logo" className="w-full h-full" />
+            </Link>
 
             {/* MENU */}
             <div className="flex flex-col">
-              <Link className="py-2 border-b text-[18px]" to="/">
-                Home
-              </Link>
-              <Link className="py-2 border-b text-[18px]" to="/features">
-                Features
-              </Link>
-              <Link className="py-2 border-b text-[18px]" to="/pages">
-                Pages
-              </Link>
-              <Link className="py-2 border-b text-[18px]" to="/shop">
-                Shop
-              </Link>
-              <Link className="py-2 border-b text-[18px]" to="/blog">
-                Blog
-              </Link>
-              <Link className="py-2 border-b text-[18px]" to="/contact">
-                Contact
-              </Link>
+              {menuLinks.map((menu, index) => (
+                <Link
+                  to={menu.link}
+                  key={index}
+                  className="py-2 border-b text-[18px] flex items-center justify-between gap-2 "
+                >
+                  {menu.name}{" "}
+                  <span className="w-7 h-7 flex justify-center items-center bg-[#d2151e] text-[#fff] ">
+                    <ChevronRight size={40} />
+                  </span>
+                </Link>
+              ))}
+            </div>
+            <div className="flex gap-3">
+              <div className="bg-blue-600 text-white p-2 rounded">
+                <Facebook size={16} />
+              </div>
+
+              <div className="bg-red-500 p-2 text-white rounded">
+                <Mail size={16} />
+              </div>
+
+              <div className="bg-blue-700 p-2 text-white rounded">
+                <Linkedin size={16} />
+              </div>
+
+              <div className="bg-pink-500 p-2 text-white rounded">
+                <Instagram size={16} />
+              </div>
+
+              <div className="bg-sky-500 p-2 text-white rounded">
+                <Twitter size={16} />
+              </div>
+            </div>
+            <div
+              className="fixed top-5 right-5 mt-0"
+              onClick={() => setOpen(!open)}
+            >
+              <X size={32} />
             </div>
           </div>
         </div>

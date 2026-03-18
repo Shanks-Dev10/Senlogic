@@ -36,7 +36,7 @@ export default function OurStory() {
               Read More
             </Link>
           </div>
-          <div>
+          <div className="md:h-[600px] h-full bg-cover">
             <img
               src={Ourstoryimg}
               alt="Our Story"

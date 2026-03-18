@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -30,9 +30,10 @@ export default function TestimonialSection() {
       img: User3,
     },
   ];
+   const testimonialLoop=[...testimonials,...testimonials]
 
   return (
-    <section className="bg-gray-100 py-24">
+    <section className=" py-24">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Title */}
@@ -48,7 +49,10 @@ export default function TestimonialSection() {
 
         {/* Slider */}
         <Swiper
-          modules={[Navigation, Pagination]}
+          modules={[Autoplay]}
+          autoplay={{
+            delay:2000
+          }}
           spaceBetween={30}
           slidesPerView={3}
           navigation
@@ -60,7 +64,7 @@ export default function TestimonialSection() {
           }}
         >
 
-          {testimonials.map((item, index) => (
+          {testimonialLoop.map((item, index) => (
             <SwiperSlide key={index}>
 
               <div className="bg-white p-8 rounded-md shadow relative">

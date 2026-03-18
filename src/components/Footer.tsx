@@ -1,4 +1,5 @@
 import { Facebook, Linkedin, Twitter, Instagram, Mail } from "lucide-react";
+import whatsapp from "@/assets/whatsapp.webp";
 
 export default function Footer() {
   const copyrights = new Date().getFullYear();
@@ -111,6 +112,11 @@ export default function Footer() {
             </a>
           </div>
         </div>
+      </div>
+      <div>
+        <a href="+911234567890" target="_blank" className="w-16 h-16 fixed bottom-10 right-5 animate-bounce hover:animate-none">
+          <img src={whatsapp} alt="whatsapp" className="w-full h-full" />
+        </a>
       </div>
     </footer>
   );
