@@ -14,7 +14,7 @@ export default function OurCompany() {
                     <img
                         src={Aboutpageimg1}
                         alt="Company"
-                        className="rounded-md shadow-lg w-full md:h-[350px] lg:h-[500px]  object-cover"
+                        className="rounded-md shadow-lg"
                     />
 
                     {/* Play Button */}
@@ -24,7 +24,12 @@ export default function OurCompany() {
                         <div className="absolute w-14 h-14 md:w-20 md:h-20 bg-[#E7232D] rounded-full animate-pulse"></div>
 
                         {/* Inner Button */}
-                        <button className="relative w-7 h-7 md:w-14 md:h-14 bg-[#E7232D] rounded-full flex items-center justify-center shadow-lg hover:scale-50 transition">
+                        <a
+                            href="https://youtu.be/U4RtS8-EjBw?si=GIzsB8kEpcLOhThl"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                        <button className="relative w-7 h-7 md:w-14 md:h-14 bg-[#E7232D] rounded-full flex items-center justify-center shadow-lg transition">
 
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -36,6 +41,7 @@ export default function OurCompany() {
                             </svg>
 
                         </button>
+                        </a>
 
                     </div>
                 </div>
