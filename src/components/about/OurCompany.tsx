@@ -14,23 +14,23 @@ export default function OurCompany() {
                     <img
                         src={Aboutpageimg1}
                         alt="Company"
-                        className="rounded-lg shadow-lg"
+                        className="rounded-md shadow-lg w-full md:h-[350px] lg:h-[500px]  object-cover"
                     />
 
                     {/* Play Button */}
                     <div className="absolute inset-0 flex items-center justify-center">
 
                         {/* Outer Ring */}
-                        <div className="absolute w-28 h-28 bg-[#E7232D] rounded-full animate-pulse"></div>
+                        <div className="absolute w-14 h-14 md:w-20 md:h-20 bg-[#E7232D] rounded-full animate-pulse"></div>
 
                         {/* Inner Button */}
-                        <button className="relative w-20 h-20 bg-[#E7232D] rounded-full flex items-center justify-center shadow-lg hover:scale-50 transition">
+                        <button className="relative w-7 h-7 md:w-14 md:h-14 bg-[#E7232D] rounded-full flex items-center justify-center shadow-lg hover:scale-50 transition">
 
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
                                 fill="white"
-                                className="w-10 h-10 ml-1"
+                                className="w-5 h-5 md:w-7 md:h-7 ml-1"
                             >
                                 <path d="M8 5v14l11-7z" />
                             </svg>
@@ -49,10 +49,8 @@ export default function OurCompany() {
                         </span>
                     </h2>
 
-                    <p className="mt-6 text-gray-600 leading-relaxed">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry. Lorem Ipsum has been the industry's standard dummy text
-                        ever since the 1500s, when an unknown printer took a galley.
+                    <p className="mt-6 text-gray-600 leading-relaxed text-justify">
+                        Senlogic Automation Private Limited a professionally managed company, engaged in the weighing Automation Activities Incorporated in February 2002. A trusted name engaged in the weighing Automation Activities. The company offers a complete range of products for core sectors such as Rail In-motion Weighing Systems, Rail Static Weighing System and On Board Weighing Solution for Earth moving equipments also providing complete weighing solution for steel plants, Cement plants, Power plants etc and other weighing automation from design through implementation to operation and customized product development.
                     </p>
 
                     {/* Signature */}
