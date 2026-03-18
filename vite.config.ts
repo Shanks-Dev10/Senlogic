@@ -8,9 +8,6 @@ export default defineConfig({
   css: {
     transformer: "postcss",
   },
-  build: {
-    cssMinify: 'esbuild', // ✅ ADD THIS LINE
-  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
