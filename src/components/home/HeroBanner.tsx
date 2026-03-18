@@ -13,7 +13,7 @@ export default function HeroBanner() {
           <img src={Slider1} className="absolute w-full h-full bg-cover"/>
           <div className="grid grid-cols-1 md:grid-cols-2 items-center  pt-[50px] px-4 gap-2 max-w-[1200px] mx-auto relative z-10">
             <div className="md:px-4 px-0">
-              <h1 className="text-white md:text-start text-center text-2xl md:text-[48px] md:leading-[60px] mb-[20px]">
+              <h1 className="text-white md:text-start text-center text-2xl md:text-[40px] lg:text-[48px] md:leading-[60px] mb-[20px]">
                 We are industry factory solution
               </h1>
               <p className="text-white leading-[30px] mb-[20px] md:text-start text-center">

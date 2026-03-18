@@ -20,14 +20,18 @@ export default function OurStory() {
               </span>
             </h2>
             <h4 className="text-[26px] leading-[40px] font-medium text-[#999] mb-[15px]">
-              Amazing things happen to your business when we connect those dots
-              of utility and value.
+              Senlogic Automation Private Limited a professionally managed
+              company, engaged in the weighing Automation Activities
+              Incorporated in February 2002.
             </h4>
             <p className="text-[16px] leading-[32px] text-[#000] mb-[24px]">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo,
-              itaque! Voluptatum veritatis asperiores fuga et eos, unde velit
-              earum in laboriosam, provident aliquid vel aut quae reiciendis.
-              Nam, vel. Iste.
+              The company offers a complete range of products for core sectors
+              such as Rail In-motion Weighing Systems, Rail Static Weighing
+              System and On Board Weighing Solution for Earth moving equipments
+              also providing complete weighing solution for steel plants, Cement
+              plants, Power plants etc and other weighing automation from design
+              through implementation to operation and customized product
+              development.
             </p>
             <Link
               to={"/"}

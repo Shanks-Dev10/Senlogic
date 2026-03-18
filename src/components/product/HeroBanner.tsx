@@ -14,12 +14,11 @@ export default function HeroBanner() {
       {/* DARK OVERLAY */}
       <div className="absolute inset-0 bg-black/60" />
 
-      {/* CONTENT */}
       <div className="relative z-10 flex items-center h-full w-full max-w-7xl mx-auto px-4 md:px-6">
-        <div className="flex flex-col justify-center items-center lg:flex-row lg:items-center lg:justify-between w-full gap-4">
+        <div className="flex flex-col justify-center items-center lg:flex-row lg:items-center lg:justify-between w-full  gap-4">
           {/* Title */}
           <h1 className="text-white text-xl text-center md:text-start sm:text-2xl md:text-3xl font-bold leading-tight  break-words">
-            About Us
+            Product
           </h1>
 
           {/* Breadcrumb */}
@@ -28,7 +27,7 @@ export default function HeroBanner() {
               Home
             </Link>
             <ChevronRight size={14} />
-            <span>About Us</span>
+            <span>Products</span>
           </div>
         </div>
       </div>
