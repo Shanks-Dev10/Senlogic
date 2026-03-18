@@ -114,7 +114,7 @@ export default function Footer() {
         </div>
       </div>
       <div>
-        <a href="+911234567890" target="_blank" className="w-16 h-16 fixed bottom-10 right-5 animate-bounce hover:animate-none">
+        <a href="+911234567890" target="_blank" className="w-16 h-16 fixed bottom-10 right-5 z-50 animate-bounce hover:animate-none">
           <img src={whatsapp} alt="whatsapp" className="w-full h-full" />
         </a>
       </div>

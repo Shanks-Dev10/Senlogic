@@ -24,53 +24,22 @@ export default function Products() {
       img: Product1,
       link: "/",
     },
-    {
-      title: "Machine Welding",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      img: Product1,
-      link: "/",
-    },
-    {
-      title: "Machine Welding",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      img: Product1,
-      link: "/",
-    },
-    {
-      title: "Machine Welding",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      img: Product1,
-      link: "/",
-    },
-    {
-      title: "Machine Welding",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      img: Product1,
-      link: "/",
-    },
-    {
-      title: "Machine Welding",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      img: Product1,
-      link: "/",
-    },
-    {
-      title: "Machine Welding",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      img: Product1,
-      link: "/",
-    },
   ];
 
   return (
     <section className="bg-[#F7F9FB]">
       <div className="max-w-7xl mx-auto py-24 px-4 md:px-10 lg:px-12">
+        {/* Title */}
+        <div className="text-center mb-16">
+          <h2 className="md:text-4xl text-2xl font-bold text-gray-800">
+            Our Products
+          </h2>
+
+          <p className="mt-4 text-gray-500 max-w-2xl mx-auto">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
           {products.map((item, index) => (
             <Link

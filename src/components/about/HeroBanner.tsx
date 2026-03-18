@@ -1,56 +1,34 @@
 import BannerImg from "@/assets/home-banner.webp";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
-
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import { ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function HeroBanner() {
   return (
-    <section>
-      <div>
-        <Swiper
-          modules={[Autoplay, Navigation]}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
-          navigation={true}
-          slidesPerView={1}
-          loop={true}
-          className="relative h-[70vh] "
-        >
-          <SwiperSlide className="mr-0">
-            {" "}
-            {/* BACKGROUND IMAGE */}
-            <img
-              src={BannerImg}
-              className="absolute w-full h-full object-cover"
-            />
-            {/* DARK OVERLAY */}
-            <div className="absolute w-full h-full bg-black/60" />
-            {/* CONTENT */}
-            <div className="relative z-10 flex items-center justify-center h-full text-white text-5xl">
-              Industrial Solutions
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            {" "}
-            {/* BACKGROUND IMAGE */}
-            <img
-              src={BannerImg}
-              className="absolute w-full h-full object-cover"
-            />
-            {/* DARK OVERLAY */}
-            <div className="absolute w-full h-full bg-black/60" />
-            {/* CONTENT */}
-            <div className="relative z-10 flex items-center justify-center h-full text-white text-5xl">
-              Industrial Solutions
-            </div>
-          </SwiperSlide>
-        </Swiper>
+    <section className="relative h-[30vh]">
+      {/* BACKGROUND IMAGE */}
+      <img
+        src={BannerImg}
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+
+      {/* DARK OVERLAY */}
+      <div className="absolute inset-0 bg-black/60" />
+
+      {/* CONTENT */}
+      <div className="relative z-10 flex items-center h-full w-full px-6">
+        <div className="flex items-center justify-between w-full max-w-7xl mx-auto">
+          <h1 className="text-white text-2xl md:text-5xl font-bold">
+            About US
+          </h1>
+
+          <div className="flex items-center gap-1 text-sm text-white font-normal">
+            <Link to="/" className="hover:text-[#d2151e] transition-colors">
+              Home
+            </Link>
+            <ChevronRight size={14} />
+            <span>About Us</span>
+          </div>
+        </div>
       </div>
     </section>
   );

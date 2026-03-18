@@ -4,18 +4,16 @@ export default function About() {
     <section>
       <div
         style={{ backgroundImage: `url(${MapImg})` }}
-        className="py-[100px] bg-[#d2151e] relative px-4"
+        className="py-[50px] bg-[#d2151e] relative px-4 "
       >
-        <div className="max-w-[780px] mx-auto">
-          <h2 className="text-[32px] font-semibold leading-[50px] text-white text-center mb-6">
-            Amazing things happen to your business when we connect those dots of
-            utility and value.
+        <div className="max-w-[850px] mx-auto">
+          <h2 className="text-[40px] font-semibold leading-[50px] text-white text-center mb-6">
+            On Board Weighing Solution
           </h2>
-          <p className="text-[16px] leading-[30px] text-white text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-            sequi inventore tenetur, explicabo recusandae, voluptate beatae
-            voluptatum vel ex minus quas ipsum officiis quos. Incidunt deleniti
-            harum reiciendis recusandae rerum.
+          <p className="text-[20px] leading-[30px] text-white text-center">
+            Senlogic Automation Private Limited Company a professionally managed
+            company, engaged in the weighing Automation Activities Incorporated
+            in February 2002
           </p>
         </div>
       </div>

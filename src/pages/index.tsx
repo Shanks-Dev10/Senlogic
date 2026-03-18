@@ -14,8 +14,8 @@ export default function Home() {
     <div className="">
       <Header />
       <HeroBanner/>
-      <Products/>
       <About/>
+      <Products/>
       <OurStory/>
       <OurProject/>
       <OurTeam/>
