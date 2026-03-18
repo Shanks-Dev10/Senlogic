@@ -6,9 +6,12 @@ import path from "path"
 export default defineConfig({
   plugins: [react()],
   css: {
-    transformer: "postcss", // ✅ ADD THIS LINE
+    transformer: "postcss",
   },
-   resolve: {
+  build: {
+    cssMinify: 'esbuild', // ✅ ADD THIS LINE
+  },
+  resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
