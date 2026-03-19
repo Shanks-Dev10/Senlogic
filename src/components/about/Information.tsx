@@ -17,7 +17,7 @@ export default function ContactStrip() {
     {
       icon: Smartphone,
       title: "Phone Numbers",
-      text1: "Mobile : +91 9380018943",
+      text1: "Mobile : +91 93800 18943",
     },
     {
       icon: Clock,

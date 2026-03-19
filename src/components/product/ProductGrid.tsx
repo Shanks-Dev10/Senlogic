@@ -62,11 +62,10 @@ export default function Products() {
                       <div
                         className={`absolute inset-0 flex flex-col items-center justify-center gap-3
               transition-all duration-500
-              ${
-                hovered === product.id
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-4"
-              }`}
+              ${hovered === product.id
+                            ? "opacity-100 translate-y-0"
+                            : "opacity-0 translate-y-4"
+                          }`}
                       >
                         <div className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center">
                           <ArrowUpRight size={20} className="text-white" />

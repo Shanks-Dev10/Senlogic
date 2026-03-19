@@ -1,7 +1,7 @@
 import { NavLink, useParams } from "react-router-dom";
 import { productLists } from "@/data/products";
 import BannerImg from "@/assets/home-banner.webp";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, CheckCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -75,14 +75,13 @@ export default function ProductDetails() {
               {categoryProducts.map((item) => (
                 <NavLink
                   key={item.id}
-                  to={`/product/${item.slug}`} 
+                  to={`/product/${item.slug}`}
                   className={({ isActive }) =>
                     `block px-4 py-3 border mb-2 rounded text-sm transition-all duration-300
-      ${
-        isActive
-          ? "bg-[#d2151e] text-white"
-          : "bg-gray-50 text-gray-700 hover:bg-[#d2151e] hover:text-white"
-      }`
+      ${isActive
+                      ? "bg-[#d2151e] text-white"
+                      : "bg-gray-50 text-gray-700 hover:bg-[#d2151e] hover:text-white"
+                    }`
                   }
                 >
                   {item.title}
@@ -137,16 +136,27 @@ export default function ProductDetails() {
           </div>
 
           {/* Extra Section */}
-          <div className="pt-6 space-y-3">
-            <h3 className="text-lg font-bold text-gray-800">
-              {product.extraSection?.title}
-            </h3>
+          <div className="pt-6 space-y-4">
 
-            {product.extraSection?.paragraphs.map((p, i) => (
-              <p key={i} className="text-gray-600">
-                {p}
-              </p>
-            ))}
+            <ul className="space-y-3 text-gray-600 text-sm leading-relaxed">
+
+              {product.extraSection?.paragraphs.map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+
+                  {/* Tick Icon */}
+                  <CheckCheck
+                    size={18}
+                    className="text-[#E7232D] mt-1 flex-shrink-0"
+                  />
+
+                  {/* Text */}
+                  {item}
+
+                </li>
+              ))}
+
+            </ul>
+
           </div>
         </div>
       </div>
