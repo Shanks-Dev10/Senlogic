@@ -100,9 +100,9 @@ export default function Header() {
 
           {/* RIGHT ICON */}
           <div className="hidden lg:flex items-center gap-4">
-            <button className="border rounded-md px-4 py-2 hover:bg-[#D2151E] hover:text-white hover:border-[#D2151E] transition-colors duration-300">
+            <Link to={'/contact'} className="border rounded-md px-4 py-2 hover:bg-[#D2151E] hover:text-white hover:border-[#D2151E] transition-colors duration-300">
               Contact Us
-            </button>
+            </Link>
           </div>
 
           {/* MOBILE MENU BUTTON */}

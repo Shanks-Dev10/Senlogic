@@ -15,18 +15,20 @@ export default function HeroBanner() {
       <div className="absolute inset-0 bg-black/60" />
 
       {/* CONTENT */}
-      <div className="relative z-10 flex items-center h-full w-full px-6">
-        <div className="flex items-center justify-between w-full max-w-7xl mx-auto">
-          <h1 className="text-white text-2xl md:text-5xl font-bold">
-            Services
+      <div className="relative z-10 flex items-center h-full w-full max-w-7xl mx-auto px-4 md:px-6">
+        <div className="flex flex-col justify-center items-center lg:flex-row lg:items-center lg:justify-between w-full gap-4">
+          {/* Title */}
+          <h1 className="text-white text-xl text-center md:text-start sm:text-2xl md:text-3xl font-bold leading-tight  break-words">
+            Service
           </h1>
 
-          <div className="flex items-center gap-1 text-sm text-white font-normal">
-            <Link to="/" className="hover:text-[#d2151e] transition-colors">
+          {/* Breadcrumb */}
+          <div className="flex flex-wrap items-center justify-center gap-1 text-xs sm:text-sm text-white">
+            <Link to="/" className="hover:text-[#d2151e]">
               Home
             </Link>
             <ChevronRight size={14} />
-            <span>Services</span>
+            <span>Service</span>
           </div>
         </div>
       </div>

@@ -1,7 +1,6 @@
 import BannerImg from "@/assets/home-banner.webp";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Information from "@/components/about/Information"
 import { Link } from "react-router-dom";
 import { MapPin, Mail, Phone, Hourglass, ChevronRight } from "lucide-react";
 
@@ -68,7 +67,7 @@ export default function Contact() {
 
             {/* Inforamtion */}
             <section className="bg-gray-100 py-20">
-                <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
+                <div className="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
 
                     {contactData.map((item, index) => {
                         const Icon = item.icon;
@@ -103,7 +102,7 @@ export default function Contact() {
             </section>
 
             <section className="bg-gray-100 py-20">
-                <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+                <div className="max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-2 grid-cols-1 gap-10">
 
                     {/* LEFT - FORM */}
                     <div className="bg-white p-8 rounded-lg shadow-sm">
@@ -175,7 +174,6 @@ export default function Contact() {
                 </div>
             </section>
 
-            <Information />
             <Footer />
         </>
     );
