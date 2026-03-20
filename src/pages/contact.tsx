@@ -105,7 +105,7 @@ export default function Contact() {
                 <div className="max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-2 grid-cols-1 gap-10">
 
                     {/* LEFT - FORM */}
-                    <div className="bg-white p-8 rounded-lg shadow-sm">
+                    <div className="bg-white md:p-8 p-4 rounded-lg shadow-sm">
                         <h2 className="text-2xl font-semibold mb-6">
                             Send Message Us
                         </h2>
@@ -113,7 +113,7 @@ export default function Contact() {
                         <form className="space-y-4">
 
                             {/* Row 1 */}
-                            <div className="grid md:grid-cols-2 gap-4">
+                            <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
                                 <input
                                     type="text"
                                     placeholder="Your Name"
@@ -127,7 +127,7 @@ export default function Contact() {
                             </div>
 
                             {/* Row 2 */}
-                            <div className="grid md:grid-cols-2 gap-4">
+                            <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
                                 <input
                                     type="text"
                                     placeholder="Phone"
