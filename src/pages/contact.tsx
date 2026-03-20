@@ -114,12 +114,12 @@ export default function Contact() {
 
                             {/* Row 1 */}
                             <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
-                                <input
+                                <input name="name"
                                     type="text"
                                     placeholder="Your Name"
                                     className="border rounded px-4 py-3 text-sm outline-none focus:border-[#E7232D]"
                                 />
-                                <input
+                                <input name="email"
                                     type="email"
                                     placeholder="Your Email Id"
                                     className="border rounded px-4 py-3 text-sm outline-none focus:border-[#E7232D]"
@@ -128,12 +128,12 @@ export default function Contact() {
 
                             {/* Row 2 */}
                             <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
-                                <input
+                                <input name="phone"
                                     type="text"
                                     placeholder="Phone"
                                     className="border rounded px-4 py-3 text-sm outline-none focus:border-[#E7232D]"
                                 />
-                                <input
+                                <input name="subject"
                                     type="text"
                                     placeholder="Subject"
                                     className="border rounded px-4 py-3 text-sm outline-none focus:border-[#E7232D]"
@@ -141,7 +141,7 @@ export default function Contact() {
                             </div>
 
                             {/* Message */}
-                            <textarea
+                            <textarea name="message"
                                 rows={5}
                                 placeholder="Your Message..."
                                 className="w-full border rounded px-4 py-3 text-sm outline-none focus:border-[#E7232D]"
