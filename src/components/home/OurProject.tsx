@@ -10,7 +10,6 @@ import Project4 from "@/assets/steel.webp";
 import Project5 from "@/assets/road.webp";
 import Project6 from "@/assets/port.webp";
 import Project7 from "@/assets/earth.webp";
-import { Link } from "react-router-dom";
 
 export default function OurProject() {
   const project = [
