@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { siX } from "simple-icons/icons";
 import {
   ChevronRight,
   Menu,
@@ -10,8 +11,9 @@ import {
   Instagram,
   Mail,
   Phone,
+  Youtube,
 } from "lucide-react";
-import logo from "@/assets/logo.webp";
+import logo from "@/assets/Senlogic Logo.jpeg";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -28,106 +30,191 @@ export default function Header() {
 
   const menuLinks = [
     { name: "Home", link: "/" },
-    { name: "About Us", link: "/about" },
-    { name: "Services", link: "/service" },
-    { name: "Product", link: "/product" },
-    { name: "Contact Us", link: "/contact" },
+    { name: "About Us", link: "/" },
+    { name: "Services", link: "/" },
+    { name: "Product", link: "/" },
+    { name: "Completed Projected", link: "/" },
+    { name: "Contact Us", link: "/" },
   ];
 
   return (
-    <header>
-      {/* Top Menu */}
-      <div className="bg-[#d2151e] hidden lg:block">
-        <div className="px-6 md:px-12 py-4 lg:py-2  max-w-7xl mx-auto text-[#fff]">
-          <div className="flex items-center justify-between ">
-            <div className="flex items-center gap-3">
-              <Twitter size={18} />
-              <Linkedin size={18} />
-              <Facebook size={18} />
-            </div>
-            <div className="flex items-center gap-4">
-              <a href="#" className="flex items-center gap-2  text-[14px]">
-                <span>
-                  <Mail size={16} />
-                </span>
-                marketing@senlogicgroup.com
-              </a>
-              <a href="#" className="flex items-center gap-2  text-[14px]">
-                <span>
-                  <Phone size={16} />
-                </span>
-                +91 93800 18943
-              </a>
-            </div>
+    <header className="relative z-50">
+      {/* TOP BAR — DESKTOP */}
+      <div className="hidden bg-[#173156] text-white lg:block">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2.5 md:px-12">
+          {/* Social Links */}
+          <div className="flex items-center gap-2">
+            {/* Facebook */}
+            <a
+              href="https://www.facebook.com/people/Senlogic/61563415796926/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="flex h-8 w-8 items-center justify-center rounded-full   bg-[#2980c2] transition-all duration-300 hover:-translate-y-1"
+            >
+              <Facebook size={16} className="text-[#fff] " />
+            </a>
+
+            {/* YouTube */}
+            <a
+              href="https://www.youtube.com/@senlogicautomationpvtltd"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              className="flex h-8 w-8 items-center justify-center rounded-full   bg-[#D2151E] transition-all duration-300 hover:-translate-y-1"
+            >
+              <Youtube size={16} className="text-[#FFf]" />
+            </a>
+
+            {/* X (formerly Twitter) */}
+            <a
+              href="https://x.com/Senlogic1839021"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="X"
+              className="flex h-8 w-8 items-center justify-center rounded-full   bg-black transition-all duration-300 hover:-translate-y-1"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                className="h-[16px] w-[16px] fill-current text-[#fff]"
+                aria-hidden="true"
+              >
+                <path d={siX.path} />
+              </svg>
+            </a>
+
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/senlogic_automation/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="flex h-8 w-8 items-center justify-center rounded-full !bg-[radial-gradient(circle_at_30%_107%,rgb(254,218,117)_0%,rgb(254,218,117)_5%,rgb(250,126,30)_25%,rgb(214,41,118)_45%,rgb(150,47,191)_65%,rgb(79,91,213)_90%)]   transition-all duration-300 hover:-translate-y-1"
+            >
+              <Instagram size={16} className="text-[#fff]" />
+            </a>
+          </div>
+
+          {/* Contact Information */}
+          <div className="flex items-center gap-7">
+            <a
+              href="mailto:marketing@senlogicgroup.com"
+              className="group flex items-center gap-2 text-[13px] font-medium transition-opacity hover:opacity-80"
+            >
+              <Mail size={15} />
+              <span>marketing@senlogicgroup.com</span>
+            </a>
+
+            <span className="h-5 w-px bg-white/30" />
+
+            <a
+              href="tel:+919380018943"
+              className="group flex items-center gap-2 text-[13px] font-medium transition-opacity hover:opacity-80"
+            >
+              <Phone size={15} />
+              <span>+91 93800 18943</span>
+            </a>
           </div>
         </div>
       </div>
 
-      {/* Menu items */}
+      {/* MAIN NAVBAR */}
       <div
-        className={`w-full z-50 transition-all duration-500 ease-in-out ${
+        className={`w-full transition-all duration-300 ease-in-out ${
           scrolled
-            ? "fixed top-0 left-0 bg-white shadow-lg animate-slideDown"
-            : "relative bg-white border"
+            ? "fixed left-0 top-0 z-50 animate-slideDown border-b border-gray-100 bg-white/95 shadow-md backdrop-blur-md"
+            : "relative border-b border-gray-100 bg-white"
         }`}
       >
-        {/* NAVBAR */}
-        <div className="flex items-center justify-between px-6 md:px-12 py-4 lg:py-2 max-w-7xl mx-auto">
+        <div className="mx-auto h-[82px] flex max-w-7xl items-center justify-between px-6 py-3 md:px-12 lg:py-0">
           {/* LOGO */}
-          <Link to="/" className="w-[150px]">
-            <img src={logo} alt="logo" className="w-full h-full" />
+          <Link
+            to="/"
+            aria-label="Senlogic Home"
+            className="relative z-10 block w-[140px] shrink-0 transition-transform duration-300 hover:scale-[1.02] lg:w-[155px]"
+          >
+            <img
+              src={logo}
+              alt="Senlogic Automation Private Limited"
+              className="block h-auto w-full object-contain"
+            />
           </Link>
 
-          {/* DESKTOP MENU */}
-          <nav className="hidden lg:flex font-medium">
-            {menuLinks.map((menu, index) => (
+          {/* DESKTOP NAVIGATION */}
+          <nav className="hidden items-center lg:flex">
+            {menuLinks.map((menu) => (
               <NavLink
-                key={index}
+                key={menu.link}
                 to={menu.link}
-                className={({ isActive }) =>
-                  `py-[23px] px-[17px] border-l-[#5757571a] border-l last:border-r  relative
-       after:content-[''] after:absolute after:left-[-1px] after:bottom-0
-       after:h-1 after:w-0 after:bg-[#D2151E]
-       after:transition-all after:duration-700 after:-z-10
-       hover:after:w-full
-       ${isActive ? "after:w-full text-[#D2151E] font-semibold" : ""}`
+                end={menu.link === "/"}
+                className={
+                  "group relative flex  items-center px-5 text-[14px] font-medium tracking-wide transition-colors duration-300  text-[#30343B] hover:text-[#D2151E]"
                 }
               >
-                {menu.name}
+                {({ isActive }) => (
+                  <>
+                    <span>{menu.name}</span>
+
+                    {/* Animated Bottom Border */}
+                    {/* <span
+                      className={`absolute -bottom-3 left-5 right-5 h-[3px] origin-center rounded-t-full bg-[#D2151E] transition-transform duration-300 xl:left-6 xl:right-6 ${
+                        isActive
+                          ? "scale-x-100"
+                          : "scale-x-0 group-hover:scale-x-100"
+                      }`}
+                    /> */}
+                  </>
+                )}
               </NavLink>
             ))}
           </nav>
 
-          {/* RIGHT ICON */}
-          <div className="hidden lg:flex items-center gap-4">
-            <Link to={'/contact'} className="border rounded-md px-4 py-2 hover:bg-[#D2151E] hover:text-white hover:border-[#D2151E] transition-colors duration-300">
+          {/* DESKTOP CONTACT BUTTON */}
+          <div className="hidden items-center lg:flex">
+            <Link
+              to="/contact"
+              className="group inline-flex items-center gap-2 rounded-md bg-[#D2151E] px-5 py-3 text-[13px] font-semibold tracking-wide text-white shadow-sm transition-all duration-300   hover:shadow-lg"
+            >
               Contact Us
+              <ChevronRight
+                size={16}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
             </Link>
           </div>
 
-          {/* MOBILE MENU BUTTON */}
-          <button className="lg:hidden" onClick={() => setOpen(!open)}>
+          {/* MOBILE MENU BUTTON — UNCHANGED DESIGN */}
+          <button
+            type="button"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            className="lg:hidden"
+            onClick={() => setOpen(!open)}
+          >
             {open ? <X /> : <Menu />}
           </button>
         </div>
 
-        {/* MOBILE MENU OVERLAY */}
+        {/* MOBILE MENU OVERLAY — UNCHANGED */}
         <div
-          className={`fixed inset-0 bg-black/40 z-10 transition-opacity duration-300
-          ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+          className={`fixed inset-0 z-10 bg-black/40 transition-opacity duration-300 lg:hidden ${
+            open
+              ? "pointer-events-auto opacity-100"
+              : "pointer-events-none opacity-0"
+          }`}
           onClick={() => setOpen(false)}
         />
 
-        {/* MOBILE MENU DRAWER */}
+        {/* MOBILE MENU DRAWER — DESIGN UNCHANGED */}
         <div
-          className={`bg-white w-[85%] min-h-screen pt-12 fixed top-0 left-0 z-20
-          transition-transform duration-300 ease-in-out
-          ${open ? "translate-x-0" : "-translate-x-full"}`}
+          className={`fixed left-0 top-0 z-20 min-h-screen w-[85%] bg-white pt-12 transition-transform duration-300 ease-in-out lg:hidden ${
+            open ? "translate-x-0" : "-translate-x-full"
+          }`}
         >
-          <div className="lg:hidden text-black px-6 py-4 gap-5 flex flex-col justify-between h-full">
+          <div className="flex h-full flex-col justify-between gap-5 px-6 py-4 text-black">
             {/* LOGO */}
-            <Link to="/" className="w-[200px]">
-              <img src={logo} alt="logo" className="w-full h-full" />
+            <Link to="/" className="w-[200px]" onClick={() => setOpen(false)}>
+              <img src={logo} alt="logo" className="h-full w-full" />
             </Link>
 
             {/* MENU */}
@@ -137,12 +224,12 @@ export default function Header() {
                   to={menu.link}
                   key={index}
                   onClick={() => setOpen(false)}
-                  className="py-2 border-b text-[18px] flex items-center justify-between gap-2
-                  hover:text-[#D2151E] transition-colors duration-200"
+                  className="flex items-center justify-between gap-2 border-b py-2 text-[18px] transition-colors duration-200 hover:text-[#D2151E]"
                 >
                   {menu.name}
-                  <span className="w-7 h-7 flex justify-center items-center bg-[#d2151e] text-[#fff]">
-                    <ChevronRight size={40} />
+
+                  <span className="flex h-7 w-7 items-center justify-center bg-[#D2151E] text-white">
+                    <ChevronRight size={24} />
                   </span>
                 </Link>
               ))}
@@ -150,28 +237,70 @@ export default function Header() {
 
             {/* SOCIALS */}
             <div className="flex gap-3">
-              <div className="bg-blue-600 text-white p-2 rounded hover:scale-110 transition-transform">
-                <Facebook size={16} />
-              </div>
-              <div className="bg-red-500 p-2 text-white rounded hover:scale-110 transition-transform">
-                <Mail size={16} />
-              </div>
-              <div className="bg-blue-700 p-2 text-white rounded hover:scale-110 transition-transform">
-                <Linkedin size={16} />
-              </div>
-              <div className="bg-pink-500 p-2 text-white rounded hover:scale-110 transition-transform">
-                <Instagram size={16} />
-              </div>
-              <div className="bg-sky-500 p-2 text-white rounded hover:scale-110 transition-transform">
-                <Twitter size={16} />
-              </div>
+              {/* Facebook */}
+              <a
+                href="https://www.facebook.com/people/Senlogic/61563415796926/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="flex h-8 w-8 items-center justify-center rounded-full   bg-[#2980c2] transition-all duration-300 hover:-translate-y-1"
+              >
+                <Facebook size={16} className="text-[#fff] " />
+              </a>
+
+              {/* YouTube */}
+              <a
+                href="https://www.youtube.com/@senlogicautomationpvtltd"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="flex h-8 w-8 items-center justify-center rounded-full   bg-[#D2151E] transition-all duration-300 hover:-translate-y-1"
+              >
+                <Youtube size={16} className="text-[#FFf]" />
+              </a>
+
+              {/* X (formerly Twitter) */}
+              <a
+                href="https://x.com/Senlogic1839021"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X"
+                className="flex h-8 w-8 items-center justify-center rounded-full   bg-black transition-all duration-300 hover:-translate-y-1"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-[16px] w-[16px] fill-current text-[#fff]"
+                  aria-hidden="true"
+                >
+                  <path d={siX.path} />
+                </svg>
+              </a>
+
+              {/* Instagram */}
+              <a
+                href="https://www.instagram.com/senlogic_automation/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="flex h-8 w-8 items-center justify-center rounded-full !bg-[radial-gradient(circle_at_30%_107%,rgb(254,218,117)_0%,rgb(254,218,117)_5%,rgb(250,126,30)_25%,rgb(214,41,118)_45%,rgb(150,47,191)_65%,rgb(79,91,213)_90%)]   transition-all duration-300 hover:-translate-y-1"
+              >
+                <Instagram size={16} className="text-[#fff]" />
+              </a>
             </div>
           </div>
 
           {/* CLOSE BUTTON */}
           <div
-            className="fixed top-5 right-5 cursor-pointer hover:rotate-90 transition-transform duration-300"
+            role="button"
+            tabIndex={0}
+            aria-label="Close menu"
+            className="fixed right-5 top-5 cursor-pointer transition-transform duration-300 hover:rotate-90"
             onClick={() => setOpen(false)}
+            onKeyDown={(event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                setOpen(false);
+              }
+            }}
           >
             <X size={32} />
           </div>

@@ -4,75 +4,98 @@ import { Link } from "react-router-dom";
 export default function Products() {
   const products = [
     {
-      title: "Machine Welding",
+      title: "Railway Applications",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "Reliable railway weighing solutions for accurate wagon measurement, load monitoring, and efficient rail operations.",
       img: Product1,
       link: "/",
     },
     {
-      title: "Machine Welding",
+      title: "On-Board Weighing Systems",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "Advanced onboard weighing systems for real-time load measurement, accurate payload monitoring, and efficient equipment operations.",
       img: Product1,
       link: "/",
     },
     {
-      title: "Machine Welding",
+      title: "Industrial Applications",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "Reliable industrial weighing and automation solutions for precise measurement, process control, and improved operational efficiency.",
       img: Product1,
       link: "/",
     },
   ];
 
   return (
-    <section className="bg-[#F7F9FB]">
-      <div className="max-w-7xl mx-auto py-24 px-4 md:px-10 lg:px-12">
-        {/* Title */}
-        <div className="text-center mb-16">
-          <h2 className="md:text-4xl text-2xl font-bold text-gray-800">
-            Our Products
+    <section className="bg-[#F5F7FA]">
+      <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 py-16 md:py-20 lg:py-24">
+        {/* Section Heading */}
+        <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+          <span className="inline-block text-sm font-semibold tracking-[2px] uppercase text-[#029549] mb-3">
+            Our Expertise
+          </span>
+
+          <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-[#173156] leading-tight">
+            Core Sectors
           </h2>
 
-          <p className="mt-4 text-gray-500 max-w-2xl mx-auto">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.
+          <div className="w-16 h-1 bg-[#029549] mx-auto mt-5 rounded-full" />
+
+          <p className="mt-5 text-gray-600 text-base md:text-lg leading-7">
+            Explore Senlogic’s advanced weighing and automation solutions,
+            engineered for precision, reliability, and efficiency across
+            railway, onboard, and industrial applications.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
+
+        {/* Sector Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {products.map((item, index) => (
             <Link
-              to={item.link}
+              to={"#"}
               key={index}
-              className="bg-white p-[10px] group block product-card"
-              style={{ boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;" }}
+              className="group bg-white rounded-xl overflow-hidden border border-gray-200/80 box-shadow:rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;  transition-all duration-300 flex flex-col"
             >
-              {/* IMAGE WRAPPER */}
-              <div className="relative overflow-hidden rounded-md">
-                {/* IMAGE */}
-                <img
-                  src={item.img}
-                  alt="product1"
-                  className="w-full h-full  transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110 group-hover:-rotate-6"
+              {/* Image */}
+              <div className="relative overflow-hidden aspect-[4/3] bg-gray-100">
+                <div
+                  className="w-full h-full bg-center bg-no-repeat bg-[length:100%_100%] group-hover:bg-[length:110%_110%] transition-[background-size] duration-700 ease-in-out"
+                  style={{ backgroundImage: `url(${item.img})` }}
                 />
               </div>
 
-              {/* CONTENT */}
-              <div className="p-[20px]">
-                <h4 className="font-medium text-[22px] mb-[10px]">
+              {/* Card Content */}
+              <div className="p-6 md:p-7 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold text-[#173156] mb-3 group-hover:text-[#029549] transition-colors duration-300">
                   {item.title}
-                </h4>
+                </h3>
 
-                <p className="mb-[20px] text-[#999] leading-[28px] text-[15px]">
+                <p className="text-black text-[15px] leading-7 mb-6 flex-grow">
                   {item.description}
                 </p>
 
+                {/* Learn More */}
                 <Link
                   to={item.link}
-                  className="bg-[#d2151e] py-[12px] px-[30px] text-[13px] font-semibold rounded-sm text-white"
+                  aria-label={`Learn more about ${item.title}`}
+                  className="inline-flex items-center gap-2 self-start text-sm font-semibold text-[#029549] group/link"
                 >
                   Learn More
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    className="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-1"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 12h14m-7-7 7 7-7 7"
+                    />
+                  </svg>
                 </Link>
               </div>
             </Link>

@@ -1,6 +1,14 @@
-import { Facebook, Linkedin, Twitter, Instagram, Mail } from "lucide-react";
+import {
+  Facebook,
+  Linkedin,
+  Twitter,
+  Instagram,
+  Mail,
+  Youtube,
+} from "lucide-react";
 import whatsapp from "@/assets/whatsapp.webp";
 
+import { siX } from "simple-icons/icons";
 export default function Footer() {
   const copyrights = new Date().getFullYear();
   return (
@@ -60,25 +68,55 @@ export default function Footer() {
           <h4 className="text-white mt-6 mb-3 text-sm">CONNECT WITH US</h4>
 
           <div className="flex gap-3">
-            <div className="bg-blue-600 p-2 rounded">
-              <Facebook size={16} />
-            </div>
+            {/* Facebook */}
+            <a
+              href="https://www.facebook.com/people/Senlogic/61563415796926/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="flex h-8 w-8 items-center justify-center rounded-full   bg-[#2980c2] transition-all duration-300 hover:-translate-y-1"
+            >
+              <Facebook size={16} className="text-[#fff] " />
+            </a>
 
-            <div className="bg-red-500 p-2 rounded">
-              <Mail size={16} />
-            </div>
+            {/* YouTube */}
+            <a
+              href="https://www.youtube.com/@senlogicautomationpvtltd"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              className="flex h-8 w-8 items-center justify-center rounded-full   bg-[#D2151E] transition-all duration-300 hover:-translate-y-1"
+            >
+              <Youtube size={16} className="text-[#FFf]" />
+            </a>
 
-            <div className="bg-blue-700 p-2 rounded">
-              <Linkedin size={16} />
-            </div>
+            {/* X (formerly Twitter) */}
+            <a
+              href="https://x.com/Senlogic1839021"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="X"
+              className="flex h-8 w-8 items-center justify-center rounded-full   bg-black transition-all duration-300 hover:-translate-y-1"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                className="h-[16px] w-[16px] fill-current text-[#fff]"
+                aria-hidden="true"
+              >
+                <path d={siX.path} />
+              </svg>
+            </a>
 
-            <div className="bg-pink-500 p-2 rounded">
-              <Instagram size={16} />
-            </div>
-
-            <div className="bg-sky-500 p-2 rounded">
-              <Twitter size={16} />
-            </div>
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/senlogic_automation/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="flex h-8 w-8 items-center justify-center rounded-full !bg-[radial-gradient(circle_at_30%_107%,rgb(254,218,117)_0%,rgb(254,218,117)_5%,rgb(250,126,30)_25%,rgb(214,41,118)_45%,rgb(150,47,191)_65%,rgb(79,91,213)_90%)]   transition-all duration-300 hover:-translate-y-1"
+            >
+              <Instagram size={16} className="text-[#fff]" />
+            </a>
           </div>
         </div>
 
@@ -113,11 +151,11 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div>
+      {/* <div>
         <a href="+911234567890" target="_blank" className="w-16 h-16 fixed bottom-10 right-5 z-50 animate-bounce hover:animate-none">
           <img src={whatsapp} alt="whatsapp" className="w-full h-full" />
         </a>
-      </div>
+      </div> */}
     </footer>
   );
 }

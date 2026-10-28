@@ -163,3 +163,10 @@ html,body{
 .animate-slideDown {
   animation: slideDown 0.6s ease forwards;
 }
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}

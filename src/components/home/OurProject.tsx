@@ -54,14 +54,16 @@ export default function OurProject() {
   return (
     <section>
       <div className="max-w-7xl mx-auto py-24 px-4 md:px-10 lg:px-12">
-        <div className="flex flex-col justify-center items-center mb-[50px]">
-          <h2 className="mb-[5px] text-[35px] leading-[45px] font-semibold text-[#232323]">
-            Application Area
+        <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-[#173156] leading-tight">
+            Industries We Serve
           </h2>
-          <p className="max-w-[700px] text-center mx-auto pt-[10px] text-[15px] text-[#494949] leading-[28px] mb-[24px]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
-            atque porro quidem necessitatibus, quisquam iusto fuga ratione amet
-            ipsam hic minima.
+
+          <div className="w-16 h-1 bg-[#029549] mx-auto mt-5 rounded-full" />
+
+          <p className="mt-5 text-gray-600 text-base ">
+            Our solutions support railway logistics and industrial operations.
+            Designed to meet diverse application needs.
           </p>
         </div>
         <Swiper
@@ -83,22 +85,20 @@ export default function OurProject() {
         >
           {project.map((projects, index) => (
             <SwiperSlide>
-              <Link
+              <div
                 key={index}
-                to={projects.link}
-                className="relative flex justify-center items-center"
+                className=" flex flex-col justify-center items-center gap-3"
               >
                 <img
                   src={projects.img}
                   alt="project1 "
                   className="w-full h-full rounded-sm"
                 />
-                <div className="p-[15px] bg-[#fff] rounded-sm absolute bottom-4 z-[1px] w-[242px]">
-                  <h5 className="text-[16px] font-semibold leading-[24px] text-[#232323] text-center">
-                    {projects.title}
-                  </h5>
-                </div>
-              </Link>
+
+                <h5 className="text-[16px] font-semibold leading-[24px] text-[#232323] text-center">
+                  {projects.title}
+                </h5>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
