@@ -6,8 +6,6 @@ import {
   Menu,
   X,
   Facebook,
-  Linkedin,
-  Twitter,
   Instagram,
   Mail,
   Phone,
@@ -151,20 +149,18 @@ export default function Header() {
                   "group relative flex  items-center px-5 text-[14px] font-medium tracking-wide transition-colors duration-300  text-[#30343B] hover:text-[#D2151E]"
                 }
               >
-                {({ isActive }) => (
-                  <>
-                    <span>{menu.name}</span>
+                <>
+                  <span>{menu.name}</span>
 
-                    {/* Animated Bottom Border */}
-                    {/* <span
+                  {/* Animated Bottom Border */}
+                  {/* <span
                       className={`absolute -bottom-3 left-5 right-5 h-[3px] origin-center rounded-t-full bg-[#D2151E] transition-transform duration-300 xl:left-6 xl:right-6 ${
                         isActive
                           ? "scale-x-100"
                           : "scale-x-0 group-hover:scale-x-100"
                       }`}
                     /> */}
-                  </>
-                )}
+                </>
               </NavLink>
             ))}
           </nav>

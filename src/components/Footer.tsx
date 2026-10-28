@@ -1,12 +1,4 @@
-import {
-  Facebook,
-  Linkedin,
-  Twitter,
-  Instagram,
-  Mail,
-  Youtube,
-} from "lucide-react";
-import whatsapp from "@/assets/whatsapp.webp";
+import { Facebook, Instagram, Youtube } from "lucide-react";
 
 import { siX } from "simple-icons/icons";
 export default function Footer() {
