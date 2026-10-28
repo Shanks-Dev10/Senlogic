@@ -1,4 +1,3 @@
-import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import About from "@/components/home/About";
 import HeroBanner from "@/components/home/HeroBanner";
@@ -20,7 +19,7 @@ export default function Home() {
       <OurTeam/>
       <Testimonial/>
       {/* <Blog/> */}
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 }
