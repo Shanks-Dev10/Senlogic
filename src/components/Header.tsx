@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { siX } from "simple-icons/icons";
 import {
   ChevronRight,
+  ChevronDown,
   Menu,
   X,
   Facebook,
@@ -17,6 +18,11 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const [mobileDropdown, setMobileDropdown] = useState<number | null>(null);
+  const [mobileSubDropdown, setMobileSubDropdown] = useState<string | null>(
+    null,
+  );
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -27,12 +33,84 @@ export default function Header() {
   }, []);
 
   const menuLinks = [
-    { name: "Home", link: "/" },
-    { name: "About Us", link: "/" },
-    { name: "Services", link: "/" },
-    { name: "Product", link: "/" },
-    { name: "Completed Projected", link: "/" },
-    { name: "Contact Us", link: "/" },
+    {
+      name: "Home",
+      link: "/",
+    },
+
+    {
+      name: "Corporate Profile",
+      link: "/",
+    },
+
+    {
+      name: "Products",
+      link: "/",
+      dropdown: [
+        {
+          name: "Railway Weighing Systems",
+          link: "/",
+          dropdown: [
+            {
+              name: "Static Rail Weighbridges",
+              link: "/",
+            },
+            {
+              name: "In-Motion Rail Weighbridges",
+              link: "/",
+            },
+            {
+              name: "ALMS",
+              link: "/",
+            },
+            {
+              name: "Portable Rail Static",
+              link: "/",
+            },
+            {
+              name: "Ladle Car Systems",
+              link: "/",
+            },
+            {
+              name: "Material Handling",
+              link: "/",
+            },
+          ],
+        },
+
+        {
+          name: "Industrial & Mobile Equipment",
+          link: "/",
+          dropdown: [
+            {
+              name: "Onboard Weighing",
+              link: "/",
+            },
+          ],
+        },
+
+        {
+          name: "Road & Transportation Solutions",
+          link: "/",
+          dropdown: [
+            {
+              name: "Weigh-in-Motion",
+              link: "/",
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      name: "Aftersale",
+      link: "/",
+    },
+
+    {
+      name: "Completed Project",
+      link: "/",
+    },
   ];
 
   return (
@@ -141,27 +219,61 @@ export default function Header() {
           {/* DESKTOP NAVIGATION */}
           <nav className="hidden items-center lg:flex">
             {menuLinks.map((menu) => (
-              <NavLink
-                key={menu.link}
-                to={menu.link}
-                end={menu.link === "/"}
-                className={
-                  "group relative flex  items-center px-5 text-[14px] font-medium tracking-wide transition-colors duration-300  text-[#30343B] hover:text-[#D2151E]"
-                }
-              >
-                <>
+              <div key={menu.name} className="group relative">
+                {/* MAIN MENU */}
+                <NavLink
+                  to={menu.link}
+                  end={menu.link === "/"}
+                  className="flex items-center gap-1 px-5 py-7 text-[14px] font-medium tracking-wide text-[#30343B] transition-colors duration-300 hover:text-[#D2151E]"
+                >
                   <span>{menu.name}</span>
 
-                  {/* Animated Bottom Border */}
-                  {/* <span
-                      className={`absolute -bottom-3 left-5 right-5 h-[3px] origin-center rounded-t-full bg-[#D2151E] transition-transform duration-300 xl:left-6 xl:right-6 ${
-                        isActive
-                          ? "scale-x-100"
-                          : "scale-x-0 group-hover:scale-x-100"
-                      }`}
-                    /> */}
-                </>
-              </NavLink>
+                  {menu.dropdown && (
+                    <ChevronDown
+                      size={15}
+                      className="transition-transform duration-300 group-hover:rotate-180"
+                    />
+                  )}
+                </NavLink>
+
+                {/* FIRST DROPDOWN */}
+                {menu.dropdown && (
+                  <div className="invisible absolute left-0 top-full z-50 w-[245px] translate-y-2 rounded-md border border-gray-100 bg-white py-2 opacity-0 shadow-xl transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                    {menu.dropdown.map((item) => (
+                      <div key={item.name} className="group/sub relative">
+                        <NavLink
+                          to={item.link}
+                          className="flex items-center justify-between px-5 py-3 text-[14px] font-medium text-[#30343B] transition-colors hover:bg-gray-50 hover:text-[#D2151E]"
+                        >
+                          <span>{item.name}</span>
+
+                          {item.dropdown && (
+                            <ChevronRight
+                              size={15}
+                              className="transition-transform duration-200 group-hover/sub:translate-x-1"
+                            />
+                          )}
+                        </NavLink>
+
+                        {/* SECOND LEVEL DROPDOWN */}
+                        {item.dropdown && (
+                          <div className="invisible absolute left-full top-0 z-50 w-[245px] translate-x-2 rounded-md border border-gray-100 bg-white py-2 opacity-0 shadow-xl transition-all duration-300 group-hover/sub:visible group-hover/sub:translate-x-0 group-hover/sub:opacity-100">
+                            {item.dropdown.map((subItem) => (
+                              <NavLink
+                                key={subItem.name}
+                                to={subItem.link}
+                                className="block px-5 py-3 text-[14px] font-medium text-[#30343B] transition-colors hover:bg-gray-50 hover:text-[#D2151E]"
+                              >
+                                {subItem.name}
+                              </NavLink>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </nav>
 
@@ -213,22 +325,147 @@ export default function Header() {
               <img src={logo} alt="logo" className="h-full w-full" />
             </Link>
 
-            {/* MENU */}
+            {/* MOBILE MENU */}
             <div className="flex flex-col">
-              {menuLinks.map((menu, index) => (
-                <Link
-                  to={menu.link}
-                  key={index}
-                  onClick={() => setOpen(false)}
-                  className="flex items-center justify-between gap-2 border-b py-2 text-[18px] transition-colors duration-200 hover:text-[#D2151E]"
-                >
-                  {menu.name}
+              {menuLinks.map((menu, index) => {
+                const hasDropdown = (menu.dropdown?.length ?? 0) > 0;
+                const isOpen = mobileDropdown === index;
 
-                  <span className="flex h-7 w-7 items-center justify-center bg-[#D2151E] text-white">
-                    <ChevronRight size={24} />
-                  </span>
-                </Link>
-              ))}
+                return (
+                  <div key={menu.name} className="border-b border-gray-200">
+                    {/* MAIN MENU ROW */}
+                    <div className="flex items-center justify-between">
+                      <Link
+                        to={menu.link}
+                        onClick={() => {
+                          if (!hasDropdown) {
+                            setOpen(false);
+                            setMobileDropdown(null);
+                            setMobileSubDropdown(null);
+                          }
+                        }}
+                        className="flex-1 py-4 text-[16px] font-medium text-[#30343B] transition-colors hover:text-[#D2151E]"
+                      >
+                        {menu.name}
+                      </Link>
+
+                      {/* DROPDOWN BUTTON */}
+                      {hasDropdown && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setMobileDropdown(isOpen ? null : index);
+                            setMobileSubDropdown(null);
+                          }}
+                          className="flex h-12 w-12 items-center justify-center text-[#30343B]"
+                          aria-label={`Toggle ${menu.name} submenu`}
+                        >
+                          <ChevronDown
+                            size={18}
+                            className={`transition-transform duration-300 ${
+                              isOpen ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+                      )}
+                    </div>
+
+                    {/* FIRST LEVEL DROPDOWN */}
+                    {hasDropdown && (
+                      <div
+                        className={`grid transition-all duration-300 ${
+                          isOpen
+                            ? "grid-rows-[1fr] opacity-100"
+                            : "grid-rows-[0fr] opacity-0"
+                        }`}
+                      >
+                        <div className="overflow-hidden">
+                          {menu.dropdown?.map((item, subIndex) => {
+                            const hasSubDropdown = item.dropdown?.length > 0;
+                            const subOpen =
+                              mobileSubDropdown === `${index}-${subIndex}`;
+
+                            return (
+                              <div
+                                key={item.name}
+                                className="border-t border-gray-100 bg-gray-50"
+                              >
+                                {/* SUB MENU ROW */}
+                                <div className="flex items-center justify-between">
+                                  <Link
+                                    to={item.link}
+                                    onClick={() => {
+                                      if (!hasSubDropdown) {
+                                        setOpen(false);
+                                        setMobileDropdown(null);
+                                        setMobileSubDropdown(null);
+                                      }
+                                    }}
+                                    className="flex-1 px-6 py-3 text-[14px] font-medium text-[#30343B] hover:text-[#D2151E]"
+                                  >
+                                    {item.name}
+                                  </Link>
+
+                                  {/* SECOND LEVEL BUTTON */}
+                                  {hasSubDropdown && (
+                                    <button
+                                      type="button"
+                                      onClick={() =>
+                                        setMobileSubDropdown(
+                                          subOpen
+                                            ? null
+                                            : `${index}-${subIndex}`,
+                                        )
+                                      }
+                                      className="flex h-11 w-11 items-center justify-center"
+                                      aria-label={`Toggle ${item.name} submenu`}
+                                    >
+                                      <ChevronRight
+                                        size={16}
+                                        className={`transition-transform duration-300 ${
+                                          subOpen ? "rotate-90" : ""
+                                        }`}
+                                      />
+                                    </button>
+                                  )}
+                                </div>
+
+                                {/* SECOND LEVEL DROPDOWN */}
+                                {hasSubDropdown && (
+                                  <div
+                                    className={`grid transition-all duration-300 ${
+                                      subOpen
+                                        ? "grid-rows-[1fr] opacity-100"
+                                        : "grid-rows-[0fr] opacity-0"
+                                    }`}
+                                  >
+                                    <div className="overflow-hidden">
+                                      {item.dropdown.map((subItem) => (
+                                        <Link
+                                          key={subItem.name}
+                                          to={subItem.link}
+                                          onClick={() => {
+                                            setOpen(false);
+                                            setMobileDropdown(null);
+                                            setMobileSubDropdown(null);
+                                          }}
+                                          className="block border-t border-gray-100 bg-white px-10 py-3 text-[13px] text-[#555] hover:text-[#D2151E]"
+                                        >
+                                          {subItem.name}
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  </div>
+                                )}
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
 
             {/* SOCIALS */}
