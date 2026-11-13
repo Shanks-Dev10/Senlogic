@@ -1,22 +1,24 @@
 import Header from "@/components/Header";
 import HeroBanner from "@/components/about/HeroBanner";
-import OurCompany from "@/components/about/OurCompany";
-import Counts from "@/components/about/Counts";
-import TeamsPage from "@/components/about/TeamsPage";
-import Testimonial from "@/components/about/Testimonial";
-import Information from "@/components/about/Information";
+import WhoWeAre from "@/components/about/WhoWeAre";
+import PurposeDirection from "@/components/about/PurposeDirection";
+import WhySenlogic from "@/components/about/WhySenlogic";
+import CoreAreas from "@/components/about/CoreAreas";
+import WeighingSolutions from "@/components/about/WeighingSolutions";
 import Footer from "@/components/Footer";
+import IndustriesWeServe from "@/components/about/IndustriesWeServe";
 
 export default function About() {
   return (
-    <div className="">
+    <div>
       <Header />
-      <HeroBanner/>
-      <OurCompany />
-      <Counts />
-      <TeamsPage />
-      <Testimonial />
-      <Information />
+      <HeroBanner />
+      <WhoWeAre />
+      <PurposeDirection />
+      <WhySenlogic />
+      <CoreAreas />
+      <WeighingSolutions />
+      <IndustriesWeServe />
       <Footer />
     </div>
   );

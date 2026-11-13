@@ -40,7 +40,7 @@ export default function Header() {
 
     {
       name: "Corporate Profile",
-      link: "/",
+      link: "/corporate-profile",
     },
 
     {
