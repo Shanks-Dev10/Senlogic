@@ -1,4 +1,3 @@
-import React from "react";
 import { ArrowUpRight, Factory, Pickaxe, Zap, Building2, Route } from "lucide-react";
 
 const industries = [
