@@ -12,7 +12,6 @@ type Tab = {
 
 type WeighingItem = {
   title: string;
-  description: string;
   color: string;
 };
 
@@ -29,20 +28,20 @@ export default function WeighingSolutions() {
     {
       id: "railway",
       label: "Railway Weighing Systems",
-      mobileLabel: "Railway",
+      mobileLabel: "Railway Weighing Systems",
       icon: TrainFront,
     },
     {
-      id: "industrial",
-      label: "Industrial & Mobile Equipment Weighing",
-      mobileLabel: "Industrial & Mobile",
-      icon: Truck,
+      id: "weighing",
+      label: "On-Board Weighing Systems",
+      mobileLabel: "On-Board Weighing Systems",
+      icon: Factory,
     },
     {
-      id: "weighing",
-      label: "Industrial Weighing System",
-      mobileLabel: "Industrial Weighing",
-      icon: Factory,
+      id: "industrial",
+      label: "Industrial Applications",
+      mobileLabel: "Industrial Applications",
+      icon: Truck,
     },
   ];
 
@@ -53,91 +52,104 @@ export default function WeighingSolutions() {
 
       items: [
         {
-          title: "Static Rail Weighbridges",
-          description: "Pit-type and pitless configurations",
+          title: " Rail Static Weighing System",
           color: "#00AFA9",
         },
         {
-          title: "In-Motion Rail Weighbridges",
-          description: "Multi-draft and full-draft systems",
+          title: "Wagon Tippler Weighing System ",
           color: "#214A92",
         },
         {
-          title: "ALMS",
-          description: "Asymmetric Load Measurement Systems",
+          title:
+            " Portable Rail in Motion Cum Rail Static Weighing System – S Pass Weighing",
           color: "#00AFA9",
         },
         {
-          title: "Portable Rail Static",
-          description: "Portable weighing for suitable site conditions",
+          title: "Rail In-Motion Weighing System",
           color: "#214A92",
         },
         {
-          title: "Ladle Car Systems",
-          description: "Torpedo and hot-metal ladle car weighing",
+          title: "Wheel & Axle Weighing System",
           color: "#00AFA9",
-        },
-        {
-          title: "Material Handling",
-          description: "Wagon tippler and pusher car weighing",
-          color: "#214A92",
-        },
-      ],
-    },
-
-    industrial: {
-      title: "Industrial & Mobile Equipment Weighing",
-      subtitle: "SOLUTIONS ACROSS OPERATING ENVIRONMENTS",
-
-      items: [
-        {
-          title: "Onboard Weighing",
-          description:
-            "Front-end loaders • Excavators • Trucks and tippers • Dumpers and loaders",
-          color: "#214A92",
-        },
-        {
-          title: "Crane & Material Handling",
-          description:
-            "Grapple cranes • Container cranes • Gantry cranes • Jetty cranes",
-          color: "#00AFA9",
-        },
-        {
-          title: "Specialized Process Weighing",
-          description:
-            "Billets • Juice • Tundish • Customized industrial weighing",
-          color: "#F59A23",
-        },
-        {
-          title: "Road & Transportation",
-          description:
-            "Electronic road weighbridges • Portable systems • Weigh-in-Motion",
-          color: "#3C9474",
         },
       ],
     },
 
     weighing: {
-      title: "Industrial Weighing System",
+      title: "On-Board Weighing Systems ",
+      subtitle: "SOLUTIONS ACROSS OPERATING ENVIRONMENTS",
+
+      items: [
+        {
+          title: " Wheel Loader Weighing System",
+          color: "#214A92",
+        },
+        {
+          title: "Excavator Weighing System",
+          color: "#00AFA9",
+        },
+        {
+          title: "Truck On-Board / Dumper Load Monitoring System",
+          color: "#F59A23",
+        },
+        {
+          title: " Forklift Weighing System ",
+          color: "#3C9474",
+        },
+        {
+          title: "Grubble Weighing System",
+          color: "#00AFA9",
+        },
+        {
+          title: "Road Weigh Bridges ",
+          color: "#F59A23",
+        },
+        {
+          title: "Unmanned Weigh Bridge System ",
+          color: "#3C9474",
+        },
+      ],
+    },
+
+    industrial: {
+      title: "Industrial Applications",
       subtitle: "MEASUREMENT • CONTROL • PROCESS EFFICIENCY",
 
       items: [
         {
-          title: "Weigh-In-Motion",
-          description:
-            "Vehicle weight measurement for highway and toll-related applications.",
+          title: " Online Hot Billet Weighing System",
           color: "#214A92",
         },
         {
-          title: "ATCC",
-          description:
-            "Automatic Traffic Classification Counter solutions for vehicle classification.",
+          title: "Ladle Car Weighing System",
           color: "#00AFA9",
         },
         {
-          title: "VMS",
-          description:
-            "Vehicle Management Systems to support traffic and operational workflows.",
+          title: "Hot Metal SMS Crane Weighing System",
+          color: "#F59A23",
+        },
+        {
+          title: "  Ladle Turret Weighing System",
+          color: "#214A92",
+        },
+        {
+          title: "Torpedo Ladle Car Weighing System",
+          color: "#00AFA9",
+        },
+        {
+          title: "Pusher Car Weighing System ",
+          color: "#F59A23",
+        },
+        {
+          title: "Quenching Car Weighing System",
+          color: "#214A92",
+        },
+        {
+          title: "Tundish Weighing System ",
+          color: "#00AFA9",
+        },
+        {
+          title: "EOT Crane Weighing System ",
           color: "#F59A23",
         },
       ],
@@ -155,7 +167,6 @@ export default function WeighingSolutions() {
 
       {/* MAIN CONTAINER */}
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 xl:px-10">
-
         {/* TABS */}
         <div className="mb-10 sm:mb-12">
           <div
@@ -215,10 +226,7 @@ export default function WeighingSolutions() {
         </div>
 
         {/* SECTION HEADER */}
-        <div
-          key={activeTab}
-          className="animate-in fade-in duration-300"
-        >
+        <div key={activeTab} className="animate-in fade-in duration-300">
           <div className="mb-4 flex items-center gap-3 sm:gap-4">
             <span className="h-[3px] w-9 rounded-full bg-[#00AFA9] sm:w-12" />
 
@@ -252,58 +260,54 @@ export default function WeighingSolutions() {
             lg:gap-6
           "
         >
-          {activeContent.items.map(
-            (item: WeighingItem, index: number) => (
-              <div
-                key={item.title}
-                className="
-                  group relative min-h-[160px]
-                  overflow-hidden rounded-2xl
+          {activeContent.items.map((item: WeighingItem, index: number) => (
+            <div
+              key={item.title}
+              className="
+                  group relative 
+                   rounded-2xl
                   border border-[#DDE4E9]
                   bg-white
                   p-5 pl-6
-                  shadow-[0_7px_24px_rgba(23,54,111,0.045)]
                   transition-all duration-300
                   hover:-translate-y-1
                   hover:shadow-[0_12px_30px_rgba(23,54,111,0.09)]
-                  sm:min-h-[175px]
                   sm:p-6 sm:pl-7
-                  lg:min-h-[180px]
                 "
-              >
-                {/* LEFT ACCENT */}
-                <div
-                  className="absolute left-0 top-0 h-full w-1 sm:w-[4px]"
+            >
+              {/* LEFT ACCENT */}
+              <div
+                className="absolute left-0 top-0 h-full w-1 sm:w-[4px]"
+                style={{
+                  backgroundColor: item.color,
+                }}
+              />
+
+              {/* TOP ROW */}
+              <div className="flex items-center justify-between">
+                <span
+                  className="text-[9px] font-bold uppercase tracking-[0.14em] sm:text-[10px]"
                   style={{
-                    backgroundColor: item.color,
+                    color: item.color,
                   }}
-                />
+                >
+                  Solution {String(index + 1).padStart(2, "0")}
+                </span>
 
-                {/* TOP ROW */}
-                <div className="flex items-center justify-between">
-                  <span
-                    className="text-[9px] font-bold uppercase tracking-[0.14em] sm:text-[10px]"
-                    style={{
-                      color: item.color,
-                    }}
-                  >
-                    Solution {String(index + 1).padStart(2, "0")}
-                  </span>
+                <span
+                  className="flex h-7 w-7 items-center justify-center rounded-full text-[10px] font-bold"
+                  style={{
+                    backgroundColor: `${item.color}12`,
+                    color: item.color,
+                  }}
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+              </div>
 
-                  <span
-                    className="flex h-7 w-7 items-center justify-center rounded-full text-[10px] font-bold"
-                    style={{
-                      backgroundColor: `${item.color}12`,
-                      color: item.color,
-                    }}
-                  >
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                </div>
-
-                {/* TITLE */}
-                <h3
-                  className="
+              {/* TITLE */}
+              <h3
+                className="
                     mt-4
                     text-[17px]
                     font-semibold
@@ -312,38 +316,23 @@ export default function WeighingSolutions() {
                     text-[#102C50]
                     sm:text-[19px]
                   "
-                >
-                  {item.title}
-                </h3>
+              >
+                {item.title}
+              </h3>
 
-                {/* DESCRIPTION */}
-                <p
-                  className="
-                    mt-2
-                    max-w-2xl
-                    text-[13px]
-                    leading-6
-                    text-[#536171]
-                    sm:text-sm
-                  "
-                >
-                  {item.description}
-                </p>
-
-                {/* HOVER LINE */}
-                <div
-                  className="
+              {/* HOVER LINE */}
+              <div
+                className="
                     absolute bottom-0 left-0 h-[3px] w-0
                     transition-all duration-500
                     group-hover:w-full
                   "
-                  style={{
-                    backgroundColor: item.color,
-                  }}
-                />
-              </div>
-            )
-          )}
+                style={{
+                  backgroundColor: item.color,
+                }}
+              />
+            </div>
+          ))}
         </div>
 
         {/* TAB INDICATOR */}

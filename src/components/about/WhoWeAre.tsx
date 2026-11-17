@@ -1,7 +1,6 @@
 export default function WhoWeAre() {
   return (
     <section className="relative overflow-hidden bg-[#F5F8F2] py-12 sm:py-14 lg:py-20">
-
       {/* =====================================================
           BACKGROUND DECORATION
       ====================================================== */}
@@ -10,32 +9,25 @@ export default function WhoWeAre() {
 
       <div className="pointer-events-none absolute -bottom-32 -left-32 h-72 w-72 rounded-full bg-[#214A92]/10 blur-3xl sm:h-96 sm:w-96" />
 
-
       {/* =====================================================
           CONTAINER
       ====================================================== */}
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
-
-
         {/* ===================================================
             HEADER
         ==================================================== */}
 
-        <div className="mb-9 max-w-3xl sm:mb-11 lg:mb-12">
-
+        <div className="mb-9  sm:mb-11 lg:mb-12">
           {/* Section Label */}
 
           <div className="mb-3 flex items-center gap-3 sm:mb-4 sm:gap-4">
-
             <span className="h-[3px] w-10 rounded-full bg-[#00AFA9] sm:w-14" />
 
             <span className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#53677D] sm:text-[10px] sm:tracking-[0.18em]">
               Engineering Capability
             </span>
-
           </div>
-
 
           {/* Heading */}
 
@@ -54,13 +46,11 @@ export default function WhoWeAre() {
             Who We Are
           </h2>
 
-
           {/* Description */}
 
           <p
             className="
               mt-4
-              max-w-2xl
               text-[14px]
               font-normal
               leading-6
@@ -72,113 +62,14 @@ export default function WhoWeAre() {
               lg:text-[16px]
             "
           >
-            Senlogic Automation Private Limited designs, develops and
-            integrates industrial automation and precision weighing solutions
-            for demanding industrial environments.
+            Senlogic Automation Private Limited designs, develops, manufactures,
+            and integrates industrial automation and precision weighing. We
+            combine practical industry knowledge with customized engineering to
+            solve demanding measurement and process challenges.
           </p>
-
         </div>
 
-
-        {/* ===================================================
-            MAIN CONTENT
-        ==================================================== */}
-
         <div className="space-y-7 sm:space-y-8">
-
-
-          {/* =================================================
-              ENGINEERING DESCRIPTION
-          ================================================== */}
-
-          <div
-            className="
-              rounded-2xl
-              border
-              border-[#214A92]/10
-              bg-white
-              p-5
-              shadow-[0_8px_25px_rgba(23,54,111,0.055)]
-              sm:rounded-3xl
-              sm:p-7
-              lg:p-8
-            "
-          >
-
-            <div className="mb-5 flex items-start gap-3 sm:mb-6 sm:gap-4">
-
-
-              {/* Logo / Icon */}
-
-              <div
-                className="
-                  flex
-                  h-10
-                  w-10
-                  shrink-0
-                  items-center
-                  justify-center
-                  rounded-xl
-                  bg-[#17366F]
-                  text-base
-                  font-semibold
-                  text-white
-                  sm:h-11
-                  sm:w-11
-                  sm:rounded-2xl
-                  sm:text-lg
-                "
-              >
-                S
-              </div>
-
-
-              <div>
-
-                <h3
-                  className="
-                    text-[17px]
-                    font-semibold
-                    leading-tight
-                    tracking-[-0.015em]
-                    text-[#102C50]
-                    sm:text-[19px]
-                  "
-                >
-                  Engineering with Purpose
-                </h3>
-
-                <p className="mt-1 text-[11px] leading-5 text-[#718096] sm:text-xs">
-                  Practical solutions. Reliable execution.
-                </p>
-
-              </div>
-
-            </div>
-
-
-            <p
-              className="
-                max-w-3xl
-                text-[14px]
-                leading-6
-                text-[#4B5B6B]
-                sm:text-[15px]
-                sm:leading-7
-              "
-            >
-              We combine practical industry knowledge with customized
-              engineering to solve demanding measurement and process
-              challenges.
-            </p>
-
-          </div>
-
-
-          {/* =================================================
-              CAPABILITIES
-          ================================================== */}
-
           <div
             className="
               grid
@@ -189,8 +80,6 @@ export default function WhoWeAre() {
               lg:gap-5
             "
           >
-
-
             {/* =================================================
                 DESIGN
             ================================================== */}
@@ -215,7 +104,6 @@ export default function WhoWeAre() {
                 sm:pl-7
               "
             >
-
               {/* Accent */}
 
               <div
@@ -232,21 +120,15 @@ export default function WhoWeAre() {
                 "
               />
 
-
               {/* Header */}
 
               <div className="flex items-center justify-between">
-
                 <span className="text-[9px] font-semibold uppercase tracking-[0.13em] text-[#214A92] sm:text-[10px]">
                   Capability 01
                 </span>
 
-                <span className="text-xs font-semibold text-[#214A92]">
-                  01
-                </span>
-
+                <span className="text-xs font-semibold text-[#214A92]">01</span>
               </div>
-
 
               <h3
                 className="
@@ -262,7 +144,6 @@ export default function WhoWeAre() {
                 Design
               </h3>
 
-
               <p
                 className="
                   mt-2
@@ -273,12 +154,9 @@ export default function WhoWeAre() {
                   sm:leading-6
                 "
               >
-                Application-led system design and engineering tailored to
-                industrial requirements.
+                Application-led system design and engineering.
               </p>
-
             </div>
-
 
             {/* =================================================
                 INTEGRATION
@@ -304,7 +182,6 @@ export default function WhoWeAre() {
                 sm:pl-7
               "
             >
-
               {/* Accent */}
 
               <div
@@ -321,21 +198,15 @@ export default function WhoWeAre() {
                 "
               />
 
-
               {/* Header */}
 
               <div className="flex items-center justify-between">
-
                 <span className="text-[9px] font-semibold uppercase tracking-[0.13em] text-[#00AFA9] sm:text-[10px]">
                   Capability 02
                 </span>
 
-                <span className="text-xs font-semibold text-[#00AFA9]">
-                  02
-                </span>
-
+                <span className="text-xs font-semibold text-[#00AFA9]">02</span>
               </div>
-
 
               <h3
                 className="
@@ -351,7 +222,6 @@ export default function WhoWeAre() {
                 Integration
               </h3>
 
-
               <p
                 className="
                   mt-2
@@ -362,12 +232,9 @@ export default function WhoWeAre() {
                   sm:leading-6
                 "
               >
-                Sensors, instrumentation, control systems and software
-                integrated into a seamless solution.
+                Sensors, instrumentation, controls, and software.
               </p>
-
             </div>
-
 
             {/* =================================================
                 DELIVERY
@@ -393,7 +260,6 @@ export default function WhoWeAre() {
                 sm:pl-7
               "
             >
-
               {/* Accent */}
 
               <div
@@ -410,21 +276,15 @@ export default function WhoWeAre() {
                 "
               />
 
-
               {/* Header */}
 
               <div className="flex items-center justify-between">
-
                 <span className="text-[9px] font-semibold uppercase tracking-[0.13em] text-[#F59A23] sm:text-[10px]">
                   Capability 03
                 </span>
 
-                <span className="text-xs font-semibold text-[#F59A23]">
-                  03
-                </span>
-
+                <span className="text-xs font-semibold text-[#F59A23]">03</span>
               </div>
-
 
               <h3
                 className="
@@ -440,7 +300,6 @@ export default function WhoWeAre() {
                 Delivery
               </h3>
 
-
               <p
                 className="
                   mt-2
@@ -451,16 +310,11 @@ export default function WhoWeAre() {
                   sm:leading-6
                 "
               >
-                Installation, commissioning and dependable customer support
-                from implementation to operation.
+                Installation, commissioning and customer support.
               </p>
-
             </div>
-
           </div>
-
         </div>
-
 
         {/* ===================================================
             BOTTOM STATS
@@ -481,12 +335,9 @@ export default function WhoWeAre() {
             sm:pt-8
           "
         >
-
-
           {/* Established */}
 
           <div className="text-center sm:text-left">
-
             <p
               className="
                 text-[25px]
@@ -501,16 +352,13 @@ export default function WhoWeAre() {
             </p>
 
             <p className="mt-2 text-[9px] font-medium uppercase tracking-[0.12em] text-[#718096] sm:text-[10px]">
-              Established
+              Year established
             </p>
-
           </div>
-
 
           {/* Experience */}
 
           <div className="text-center sm:text-left">
-
             <p
               className="
                 text-[25px]
@@ -525,16 +373,13 @@ export default function WhoWeAre() {
             </p>
 
             <p className="mt-2 text-[9px] font-medium uppercase tracking-[0.12em] text-[#718096] sm:text-[10px]">
-              Years Experience
+              years of industry experience
             </p>
-
           </div>
-
 
           {/* Capabilities */}
 
           <div className="text-center sm:text-left">
-
             <p
               className="
                 text-[25px]
@@ -545,20 +390,17 @@ export default function WhoWeAre() {
                 sm:text-[28px]
               "
             >
-              3
+              73
             </p>
 
             <p className="mt-2 text-[9px] font-medium uppercase tracking-[0.12em] text-[#718096] sm:text-[10px]">
-              Core Capabilities
+              Group professionals
             </p>
-
           </div>
-
 
           {/* Engineering */}
 
           <div className="text-center sm:text-left">
-
             <p
               className="
                 text-[25px]
@@ -569,19 +411,15 @@ export default function WhoWeAre() {
                 sm:text-[28px]
               "
             >
-              100%
+              ₹42 Cr
             </p>
 
             <p className="mt-2 text-[9px] font-medium uppercase tracking-[0.12em] text-[#718096] sm:text-[10px]">
-              Engineering Focus
+              reported group turnover
             </p>
-
           </div>
-
         </div>
-
       </div>
-
     </section>
   );
 }

@@ -143,8 +143,8 @@ export default function PurposeDirection() {
                   sm:leading-7
                 "
               >
-                “A Company Designing and Manufacturing Quality Industrial
-                Weighing Systems which are Precise, Reliable and Robust for
+                “A Company Designing and manufacturing quality industrial
+                weighing systems that are Precise, Reliable and Robust for
                 Optimizing Customer Operations”
               </p>
             </div>
@@ -241,8 +241,8 @@ export default function PurposeDirection() {
               >
                 “To be the Leading Global Supplier of Precision Automated
                 Industrial Weighing Systems that are Reliable, Guarantee
-                Compliance and Optimize Efficiency through Innovation and
-                Cutting Edge Technology”
+                Compliance, and Optimize Efficiency through Innovation and
+                cutting-edge technology "
               </p>
             </div>
           </div>
