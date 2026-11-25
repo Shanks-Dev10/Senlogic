@@ -34,14 +34,18 @@ export default function Products() {
           {productLists.map((item) => (
             <TabsContent key={item.value} value={item.value}>
               <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-10">
-                {item.details.map((product) => (
+                {item.details.map((product, index) => (
                   <Link
                     to={`/product/${product.slug}`}
                     key={product.id}
+                    style={{
+                      animationDelay: `${index * 200}ms`,
+                    }}
                     onMouseEnter={() => setHovered(product.id)}
                     onMouseLeave={() => setHovered(null)}
                     className="group relative bg-white overflow-hidden cursor-pointer
-          shadow-sm hover:shadow-xl transition-shadow duration-500"
+          shadow-sm hover:shadow-xl  border rounded-md animate-fade-up
+      transition-all duration-500 ease-out"
                   >
                     {/* Image */}
                     <div className="relative overflow-hidden h-[260px]">
@@ -62,16 +66,17 @@ export default function Products() {
                       <div
                         className={`absolute inset-0 flex flex-col items-center justify-center gap-3
               transition-all duration-500
-              ${hovered === product.id
-                            ? "opacity-100 translate-y-0"
-                            : "opacity-0 translate-y-4"
-                          }`}
+              ${
+                hovered === product.id
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-4"
+              }`}
                       >
                         <div className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center">
                           <ArrowUpRight size={20} className="text-white" />
                         </div>
                         <span className="text-white text-xs font-bold tracking-[0.2em] uppercase">
-                          View Project
+                          View Product
                         </span>
                       </div>
                     </div>

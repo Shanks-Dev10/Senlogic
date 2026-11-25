@@ -51,7 +51,7 @@ export default function ProductDetails() {
                 Home
               </Link>
               <ChevronRight size={14} />
-              <Link to="/product" className="hover:text-[#d2151e]">
+              <Link to="/products" className="hover:text-[#d2151e]">
                 Products
               </Link>
               <ChevronRight size={14} />

@@ -45,56 +45,108 @@ export default function Header() {
 
     {
       name: "Products",
-      link: "/",
+      link: "/products",
       dropdown: [
         {
           name: "Railway Weighing Systems",
           link: "/",
           dropdown: [
             {
-              name: "Static Rail Weighbridges",
+              name: "Rail Static Weighing System",
               link: "/",
             },
             {
-              name: "In-Motion Rail Weighbridges",
+              name: "Wagon Tippler Weighing System",
               link: "/",
             },
             {
-              name: "ALMS",
+              name: "Portable Rail in Motion Cum Rail Static Weighing System – S Pass Weighing",
               link: "/",
             },
             {
-              name: "Portable Rail Static",
+              name: "Rail In-Motion Weighing System",
               link: "/",
             },
             {
-              name: "Ladle Car Systems",
-              link: "/",
-            },
-            {
-              name: "Material Handling",
+              name: "Wheel & Axle Weighing System",
               link: "/",
             },
           ],
         },
 
         {
-          name: "Industrial & Mobile Equipment",
+          name: "On Board Weighing Systems",
           link: "/",
           dropdown: [
             {
-              name: "Onboard Weighing",
+              name: "Wheel Loader Weighing System",
+              link: "/",
+            },
+            {
+              name: "Excavator Weighing System",
+              link: "/",
+            },
+            {
+              name: "Truck on Board / Dumper Load Monitoring System",
+              link: "/",
+            },
+            {
+              name: "Forklift Weighing System",
+              link: "/",
+            },
+            {
+              name: "Grabble Weighing System",
+              link: "/",
+            },
+            {
+              name: "Road Weigh Bridges",
+              link: "/",
+            },
+            {
+              name: "Unmanned Weigh Bridge System",
               link: "/",
             },
           ],
         },
 
         {
-          name: "Road & Transportation Solutions",
+          name: "Industrial Applications",
           link: "/",
           dropdown: [
             {
-              name: "Weigh-in-Motion",
+              name: "Online Hot Billet Weighing System",
+              link: "/",
+            },
+            {
+              name: " Ladle Car Weighing System",
+              link: "/",
+            },
+            {
+              name: "Hot Metal SMS Crane Weighing System",
+              link: "/",
+            },
+            {
+              name: "Ladle Turret Weighing System",
+              link: "/",
+            },
+            {
+              name: "Torpedo Ladle Car Weighing System",
+              link: "/",
+            },
+            {
+              name: "Pusher Car Weighing System ",
+              link: "/",
+            },
+            {
+              name: "Quenching Car Weighing System",
+              link: "/",
+            },
+            {
+              name: "Tundish Weighing System",
+              link: "/",
+            },
+            {
+              name: "EOT Crane Weighing System",
               link: "/",
             },
           ],
@@ -104,7 +156,7 @@ export default function Header() {
 
     {
       name: "Aftersale",
-      link: "/",
+      link: "/after-sale",
     },
 
     {
@@ -257,12 +309,12 @@ export default function Header() {
 
                         {/* SECOND LEVEL DROPDOWN */}
                         {item.dropdown && (
-                          <div className="invisible absolute left-full top-0 z-50 w-[245px] translate-x-2 rounded-md border border-gray-100 bg-white py-2 opacity-0 shadow-xl transition-all duration-300 group-hover/sub:visible group-hover/sub:translate-x-0 group-hover/sub:opacity-100">
+                          <div className="invisible absolute left-full top-0 z-50 w-[245px]  translate-x-2 rounded-md border border-gray-100 bg-white  opacity-0 shadow-xl transition-all duration-300 group-hover/sub:visible group-hover/sub:translate-x-0 group-hover/sub:opacity-100 overflow-y-scroll">
                             {item.dropdown.map((subItem) => (
                               <NavLink
                                 key={subItem.name}
                                 to={subItem.link}
-                                className="block px-5 py-3 text-[14px] font-medium text-[#30343B] transition-colors hover:bg-gray-50 hover:text-[#D2151E]"
+                                className="block px-5 py-3 text-[14px] font-medium text-[#30343B] transition-colors  border-b-[1px] hover:bg-gray-50 hover:text-[#D2151E]"
                               >
                                 {subItem.name}
                               </NavLink>
