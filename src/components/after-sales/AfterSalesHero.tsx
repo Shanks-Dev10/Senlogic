@@ -1,9 +1,6 @@
 import {
   ArrowRight,
   Phone,
-  ShieldCheck,
-  Activity,
-  Settings,
 } from "lucide-react";
 import Aftersalesheroimg from "@/assets/after-sales-hero.png";
 import { Link } from "react-router-dom";
