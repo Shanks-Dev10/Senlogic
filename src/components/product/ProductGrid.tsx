@@ -87,11 +87,20 @@ export default function Products() {
             border-l-4 border-transparent group-hover:border-[#D2151E]
             transition-all duration-300"
                     >
-                      <div>
+                      <div className="">
                         <h3 className="text-[13px] font-black text-[#111] uppercase tracking-wide group-hover:text-[#D2151E]">
                           {product.title}
                         </h3>
-                        <p className="py-3">{product.shortDesc}</p>
+                        <p
+                          className="pt-3 overflow-hidden leading-6"
+                          style={{
+                            display: "-webkit-box",
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: "vertical",
+                          }}
+                        >
+                          {product.content.paragraphs}
+                        </p>
                       </div>
                       <ArrowUpRight
                         size={18}

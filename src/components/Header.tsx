@@ -13,6 +13,7 @@ import {
   Youtube,
 } from "lucide-react";
 import logo from "@/assets/Senlogic Logo.jpeg";
+import { productLists } from "../data/products";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -46,112 +47,16 @@ export default function Header() {
     {
       name: "Products",
       link: "/products",
-      dropdown: [
-        {
-          name: "Railway Weighing Systems",
-          link: "/",
-          dropdown: [
-            {
-              name: "Rail Static Weighing System",
-              link: "/",
-            },
-            {
-              name: "Wagon Tippler Weighing System",
-              link: "/",
-            },
-            {
-              name: "Portable Rail in Motion Cum Rail Static Weighing System – S Pass Weighing",
-              link: "/",
-            },
-            {
-              name: "Rail In-Motion Weighing System",
-              link: "/",
-            },
-            {
-              name: "Wheel & Axle Weighing System",
-              link: "/",
-            },
-          ],
-        },
 
-        {
-          name: "On Board Weighing Systems",
-          link: "/",
-          dropdown: [
-            {
-              name: "Wheel Loader Weighing System",
-              link: "/",
-            },
-            {
-              name: "Excavator Weighing System",
-              link: "/",
-            },
-            {
-              name: "Truck on Board / Dumper Load Monitoring System",
-              link: "/",
-            },
-            {
-              name: "Forklift Weighing System",
-              link: "/",
-            },
-            {
-              name: "Grabble Weighing System",
-              link: "/",
-            },
-            {
-              name: "Road Weigh Bridges",
-              link: "/",
-            },
-            {
-              name: "Unmanned Weigh Bridge System",
-              link: "/",
-            },
-          ],
-        },
+      dropdown: productLists.map((category) => ({
+        name: category.title,
+        link: `/products#${category.value.toLowerCase()}`,
 
-        {
-          name: "Industrial Applications",
-          link: "/",
-          dropdown: [
-            {
-              name: "Online Hot Billet Weighing System",
-              link: "/",
-            },
-            {
-              name: " Ladle Car Weighing System",
-              link: "/",
-            },
-            {
-              name: "Hot Metal SMS Crane Weighing System",
-              link: "/",
-            },
-            {
-              name: "Ladle Turret Weighing System",
-              link: "/",
-            },
-            {
-              name: "Torpedo Ladle Car Weighing System",
-              link: "/",
-            },
-            {
-              name: "Pusher Car Weighing System ",
-              link: "/",
-            },
-            {
-              name: "Quenching Car Weighing System",
-              link: "/",
-            },
-            {
-              name: "Tundish Weighing System",
-              link: "/",
-            },
-            {
-              name: "EOT Crane Weighing System",
-              link: "/",
-            },
-          ],
-        },
-      ],
+        dropdown: category.details.map((product) => ({
+          name: product.title,
+          link: `/product/${product.slug}`,
+        })),
+      })),
     },
 
     {
@@ -309,12 +214,18 @@ export default function Header() {
 
                         {/* SECOND LEVEL DROPDOWN */}
                         {item.dropdown && (
-                          <div className="invisible absolute left-full top-0 z-50 w-[245px]  translate-x-2 rounded-md border border-gray-100 bg-white  opacity-0 shadow-xl transition-all duration-300 group-hover/sub:visible group-hover/sub:translate-x-0 group-hover/sub:opacity-100 overflow-y-scroll">
+                          <div className="invisible absolute left-full top-0 z-50 w-[245px] translate-x-2 rounded-md border border-gray-100 bg-white opacity-0 shadow-xl transition-all duration-300 group-hover/sub:visible group-hover/sub:translate-x-0 group-hover/sub:opacity-100 overflow-y-scroll">
                             {item.dropdown.map((subItem) => (
                               <NavLink
                                 key={subItem.name}
                                 to={subItem.link}
-                                className="block px-5 py-3 text-[14px] font-medium text-[#30343B] transition-colors  border-b-[1px] hover:bg-gray-50 hover:text-[#D2151E]"
+                                className={({ isActive }) =>
+                                  `block px-5 py-3 text-[14px] font-medium border-b-[1px] transition-colors ${
+                                    isActive
+                                      ? "bg-[#D2151E] text-white"
+                                      : "text-[#30343B] hover:bg-gray-50 hover:text-[#D2151E]"
+                                  }`
+                                }
                               >
                                 {subItem.name}
                               </NavLink>

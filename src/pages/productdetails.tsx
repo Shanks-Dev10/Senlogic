@@ -39,7 +39,7 @@ export default function ProductDetails() {
           className="relative z-10 flex items-center h-full w-full max-w-7xl mx-auto
          px-4 md:px-6"
         >
-          <div className="flex flex-col justify-center items-center lg:flex-row lg:items-center lg:justify-between w-full gap-4">
+          <div className="flex flex-col justify-center items-center w-full gap-4">
             {/* Title */}
             <h1 className="text-white text-xl text-center md:text-start sm:text-2xl md:text-3xl font-bold leading-tight  break-words">
               {product.title}
@@ -113,8 +113,8 @@ export default function ProductDetails() {
           />
 
           {/* Title */}
-          <h2 className="text-xl md:text-2xl font-semibold text-gray-800">
-            {product.content?.title}
+          <h2 className="text-xl md:text-2xl font-semibold text-gray-800 capitalize">
+            {product.title}
           </h2>
 
           {/* Paragraphs */}
@@ -124,23 +124,12 @@ export default function ProductDetails() {
             </p>
           ))}
 
-          {/* Gallery */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {product.content?.gallery.map((img, i) => (
-              <img
-                key={i}
-                src={img}
-                className="w-full h-[180px] object-cover rounded-lg"
-              />
-            ))}
-          </div>
-
           {/* Extra Section */}
-          <div className="pt-6 space-y-4">
+          <div className="space-y-4">
 
             <ul className="space-y-3 text-gray-600 text-sm leading-relaxed">
 
-              {product.extraSection?.paragraphs.map((item, i) => (
+              {product.content?.features.map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
 
                   {/* Tick Icon */}
